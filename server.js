@@ -3,10 +3,23 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcryptjs');
 
 const app = express();
 
-let users = [];
+let users = [   {   username: 'bob',
+                    password: '$2a$08$qr1XCJQpXU9A8DdU3cTyz.BV0OaBJ..uakoKYGjd9yRAXjhOL5tXa' // password: 123
+                }
+            ];
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+app.use(require('express-session')({
+    secret : 'supercoolmyman',
+    resave :false,
+    saveUninitialized : false
+  }));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -27,6 +40,9 @@ app.get('/login', (req, res) => {
             <input type="submit" value="Log In"/>
         </div>
     </form>
+    <form method="GET" action="/success">
+    <button type="submit">Success page</button>
+    </form>
     
     
     `)
@@ -41,6 +57,35 @@ app.post('/login',
 
 )
 
+
+// app.get('/register', function(req, res) {
+ 
+
+//     res.send(
+//         ` 
+//         <h1>Registration</h1>
+//         <form action="/register" method="POST">
+//           <input type="text" name="username" />
+//           <input type="text" name="password" />
+//           <input type="submit" />
+//         </form>
+//         `
+//     ); 
+    
+// });
+
+// app.post('/register',function(req,res){
+
+//     let username = req.body.username;
+//     // hashing the password
+//     let password = bcrypt.hashSync(req.body.password,8);
+  
+  
+//     users.push({ username : username, password : password});
+//     console.log(users);
+//     res.redirect('/login');
+//   });
+
 app.get('/success', (req, res) => {
 
     if (!req.isAuthenticated()) {
@@ -50,6 +95,24 @@ app.get('/success', (req, res) => {
 
     res.send(`
         <h1>Success...</h1>
+        <form method="GET" action="/login">
+        <button type="submit">login page</button>
+        </form>
+        <form method="GET" action="/logout">
+        <button type="submit">logout</button>
+        </form>
+    `)
+})
+
+app.get('/successtest', (req, res) => {
+
+    if (!req.isAuthenticated()) {
+        res.redirect('/login');
+        return
+    }
+
+    res.send(`
+        <h1>Success again...</h1>
     `)
 })
 
@@ -61,7 +124,10 @@ app.get('/fail', (req,res) => {
 })
 
 
-
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/login');
+  });
 
 
 
