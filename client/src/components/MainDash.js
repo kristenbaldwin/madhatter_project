@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 // import { connect } from "react-redux";
 import UnderReview from './UnderReview';
 import Approved from './Approved';
@@ -8,39 +8,26 @@ import RequestedCap from './RequestCap';
 import CommittedCap from './CommittedCap';
 import GraphApproved from './GraphApproved';
 import AllOpps from './AllOpps';
+import '../styles/MainDash.css';
 
 class MainDash extends Component {
     render() {
         return (
             <div className="kpis">
                 <Row>
-                    <Col sm={4}>
-                        <UnderReview />
-                    </Col>
-                    <Col sm={4}>
-                        <Approved />
-                    </Col>
-                    <Col sm={4}>
-                        <DurationReview />
-                    </Col>
+                    <UnderReview />
+                    <Approved />
+                    <DurationReview />
                 </Row>
                 <Row>
-                    <Col sm={6}>
-                        <RequestedCap />
-                    </Col>
-                    <Col sm={6}>
-                        <CommittedCap />
-                    </Col>
+                    <RequestedCap />
+                    <CommittedCap />
                 </Row> 
                 <Row>
-                    <Col xs={12}>
-                        <GraphApproved />
-                    </Col>
+                    <GraphApproved />
                 </Row>
                 <Row>
-                    <Col xs={12}>
-                        <AllOpps />
-                    </Col>
+                    <AllOpps />
                 </Row>
             </div>
         )
