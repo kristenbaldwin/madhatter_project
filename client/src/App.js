@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from './components/modal'
+import Modal from './containers/modal'
 
 class App extends Component {
   render() {
