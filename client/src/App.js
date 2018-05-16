@@ -2,16 +2,24 @@ import React, { Component } from 'react';
 import './styles/App.css';
 
 class App extends Component {
+
+  // testing
+  getOpportunity() {
+    fetch('/api/get_opportunity')
+    .then(res => {
+      res.json()
+      .then(dummy)
+    })
+  }
+
+  componentWillMount() {
+    this.getOpportunity();
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        Hi
       </div>
     );
   }
