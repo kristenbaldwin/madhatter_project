@@ -8,6 +8,7 @@ import { loadDash } from './actions/loadDash';
 // import Footer from './components/Footer';
 
 class App extends Component {
+<<<<<<< HEAD
   // componentDidMount() {
   //   this.props.onDashLoad()
   // }
@@ -25,6 +26,27 @@ class App extends Component {
           <Footer />
         </Row> */}
       </Grid>
+=======
+
+  // testing
+  getOpportunity() {
+    fetch('/api/get_opportunity')
+    .then(res => {
+      res.json()
+      .then(dummy)
+    })
+  }
+
+  componentWillMount() {
+    this.getOpportunity();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        Hi
+      </div>
+>>>>>>> 5ad7d0372dbed92e1fcc3b6dc139261aa39f86cd
     );
   }
 }

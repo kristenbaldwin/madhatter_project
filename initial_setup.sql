@@ -1,4 +1,4 @@
-CREATE DATABASE madhatter;
+-- CREATE DATABASE madhatter;
 
 CREATE TABLE users(
     id SERIAL NOT NULL PRIMARY KEY,
