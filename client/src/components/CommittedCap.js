@@ -6,10 +6,10 @@ import '../styles/MainDash.css';
 class CommittedCap extends Component {
     render() {
         return (
-            <Col sm={6} className="kpiBlock">
-                <h2>Total Capital Committed</h2>
+            <Col sm={6} className="kpiBlock medBlock">
+                <h3>Total Capital Committed</h3>
                 <p className="helperText">To all opportunities</p>
-                <p>$50,000</p>
+                <h3>$50,000</h3>
             </Col>
         )
     }

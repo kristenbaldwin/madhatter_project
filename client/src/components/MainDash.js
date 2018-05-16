@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Row } from 'react-bootstrap';
+import { Grid, Row } from 'react-bootstrap';
 // import { connect } from "react-redux";
 import UnderReview from './UnderReview';
 import Approved from './Approved';
 import DurationReview from './DurationReview';
-import RequestedCap from './RequestCap';
+import RequestedCap from './RequestedCap';
 import CommittedCap from './CommittedCap';
 import GraphApproved from './GraphApproved';
 import AllOpps from './AllOpps';
@@ -13,23 +13,23 @@ import '../styles/MainDash.css';
 class MainDash extends Component {
     render() {
         return (
-            <div className="kpis">
-                <Row>
+            <Grid className="kpis">
+                <Row className="kpisRow">
                     <UnderReview />
                     <Approved />
                     <DurationReview />
                 </Row>
-                <Row>
+                <Row className="kpisRow">
                     <RequestedCap />
                     <CommittedCap />
                 </Row> 
-                <Row>
+                <Row className="kpisRow">
                     <GraphApproved />
                 </Row>
-                <Row>
+                <Row className="kpisRow">
                     <AllOpps />
                 </Row>
-            </div>
+            </Grid>
         )
     }
 }

@@ -6,10 +6,10 @@ import '../styles/MainDash.css';
 class RequestedCap extends Component {
     render() {
         return (
-            <Col sm={6} className="kpiBlock">
-                <h2>Total Requested Capital</h2>
+            <Col sm={6} className="kpiBlock medBlock">
+                <h3>Total Requested Capital</h3>
                 <p className="helperText">From active portfolio</p>
-                <p>$10,000</p>
+                <h3>$10,000</h3>
             </Col>
         )
     }

@@ -6,9 +6,9 @@ import '../styles/MainDash.css';
 class DurationReview extends Component {
     render() {
         return (
-            <Col sm={4} className="kpiBlock">
-                <h2>Average Review Duration</h2>
-                <p>7 days</p>
+            <Col sm={4} className="kpiBlock right">
+                <h3>Average Review Duration</h3>
+                <h3>7 days</h3>
             </Col>
         )
     }

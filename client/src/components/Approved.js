@@ -7,8 +7,8 @@ class Approved extends Component {
     render() {
         return (
             <Col sm={4} className="kpiBlock">
-                <h2>Opportunities Approved</h2>
-                <p>2</p>
+                <h3>Opportunities Approved</h3>
+                <h3>2</h3>
             </Col>
         )
     }

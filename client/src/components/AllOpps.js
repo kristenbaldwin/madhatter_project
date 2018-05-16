@@ -7,8 +7,8 @@ class AllOpps extends Component {
     render() {
         // let allOpps =
         return (
-            <Col xs={12} className="kpiBlock">
-                <h2>All Opportunities</h2>
+            <Col xs={12} className="kpiBlock largeBlock">
+                <h3>All Opportunities</h3>
                 <Row>
                     <Col>
                         {/* Map through all Opportunities table entries */}
@@ -25,10 +25,10 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
+// function mapDispatchToProps(dispatch) {
+//     return {
 
-    }
-}
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllOpps);
+export default connect(mapStateToProps, null)(AllOpps);
