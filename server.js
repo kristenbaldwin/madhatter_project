@@ -5,6 +5,36 @@ const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 
+
+
+
+// DATABASE SETUP CONFIG
+const Sequelize = require('sequelize'),
+    sequelize = new Sequelize('postgres://postgres:postgres@localhost:5432/testing')
+
+
+
+const attributes = {
+    username: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+    },
+
+    password: {
+        type: Sequelize.STRING
+    }
+}
+
+let User = sequelize.define('users', attributes)
+
+
+// DATABASE SETUP END
+
+
+
+
+
 const app = express();
 
 let users = [   {   username: 'bob',
@@ -23,6 +53,9 @@ app.use(require('express-session')({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+
 
 app.get('/login', (req, res) => {
     res.send(`
@@ -120,6 +153,10 @@ app.get('/fail', (req,res) => {
 
     res.send(`
         <h1>Fail...</h1>
+
+        <form method="GET" action="/login">
+        <button type="submit">login page</button>
+        </form>
     `)
 })
 
@@ -131,28 +168,52 @@ app.get('/logout', function(req, res){
 
 
 
-
-
-
 passport.use(new localStrategy(
+    function(username, password, done) {
+        User.findOne({
+            where: {
+                'username': username
+            }
+        }).then(function(user) {
+            console.log(user.dataValues.username);
+            console.log(user.dataValues.password);
+            console.log(user.dataValues.id);
+            if (user.dataValues.username == null) {
+                return done(null, false, { message: 'Incorrect credentials'})
+            }
 
-    function (username, password, done) {
+            let hashedPassword = bcrypt.compareSync(password, user.dataValues.password)
 
-        let user = users.find((user) => {
-            return (user.username == username && bcrypt.compareSync(password, user.password))
-        });
-
-        if (!user) {
-            return done(null, false, { message: "Incorrect credentials" });
-        }
-
-        return done(null, username)
+            if (hashedPassword) {
+                console.log('correct password')
+                return done(null, user)
+            }
+            console.log('incorrect password')
+            return done(null, false, { message: 'Incorrect credentials'})
+        })
     }
 ))
 
 
+// passport.use(new localStrategy(
+
+//     function (username, password, done) {
+
+//         let user = users.find((user) => {
+//             return (user.username == username && bcrypt.compareSync(password, user.password))
+//         });
+
+//         if (!user) {
+//             return done(null, false, { message: "Incorrect credentials" });
+//         }
+
+//         return done(null, username)
+//     }
+// ))
+
+
 passport.serializeUser(function(user,done){
-    done(null,user);
+    done(null,user.dataValues.id);
   })
   
   // deserialize
