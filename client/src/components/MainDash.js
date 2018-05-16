@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row } from 'react-bootstrap';
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import UnderReview from './UnderReview';
 import Approved from './Approved';
 import DurationReview from './DurationReview';
@@ -24,10 +24,8 @@ class MainDash extends Component {
                     <CommittedCap />
                 </Row> 
                 <Row className="kpisRow">
-                    <GraphApproved />
-                </Row>
-                <Row className="kpisRow">
                     <AllOpps />
+                    <GraphApproved />
                 </Row>
             </Grid>
         )

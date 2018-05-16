@@ -2,10 +2,13 @@ body {
     background-color: lightgray;
 }
 
+h3 {
+    margin-top: 10px;
+}
+
 .kpis {
     width: 90%;
-    white-space: nowrap;
-    overflow: hidden;
+    margin: 30px auto;
 }
 
 .kpisRow {
@@ -16,7 +19,14 @@ body {
 .kpiBlock {
     text-align: center;
     background-color: white;
+    padding: 20px;
     margin: 7px;
     border-radius: 3px;
-    border: 1px solid black;
+    border: 1.4px solid #624484;
+    box-shadow: 0 0 5px;
+}
+
+.helperText {
+    font-style: italic;
+    margin-top: -7px;
 }

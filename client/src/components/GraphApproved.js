@@ -6,7 +6,7 @@ import '../styles/MainDash.css';
 class GraphApproved extends Component {
     render() {
         return (
-            <Col xs={12} className="kpiBlock largeBlock">
+            <Col xs={7} className="kpiBlock">
                 <h3>Approved Opportunities Timeline</h3>
                 <p>Insert line chart here</p>
             </Col>

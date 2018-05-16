@@ -6,7 +6,7 @@ import '../styles/MainDash.css';
 class UnderReview extends Component {
     render() {
         return (
-            <Col sm={4} className="kpiBlock left">
+            <Col sm={4} className="kpiBlock">
                 <h3>Opportunities Under Review</h3>
                 <h3>3</h3>
             </Col>
