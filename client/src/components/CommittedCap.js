@@ -9,7 +9,7 @@ class CommittedCap extends Component {
             <Col sm={6} className="kpiBlock">
                 <h3>Total Capital Committed</h3>
                 <p className="helperText">To all opportunities</p>
-                <h3>$50,000</h3>
+                <h3 className="stat">$50,000</h3>
             </Col>
         )
     }

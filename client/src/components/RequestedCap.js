@@ -9,7 +9,7 @@ class RequestedCap extends Component {
             <Col sm={6} className="kpiBlock">
                 <h3>Total Requested Capital</h3>
                 <p className="helperText">From active portfolio</p>
-                <h3>$10,000</h3>
+                <h3 className="stat">$10,000</h3>
             </Col>
         )
     }

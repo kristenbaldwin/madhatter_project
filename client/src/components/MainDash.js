@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Row } from 'react-bootstrap';
-import { connect } from "react-redux";
 import UnderReview from './UnderReview';
 import Approved from './Approved';
 import DurationReview from './DurationReview';

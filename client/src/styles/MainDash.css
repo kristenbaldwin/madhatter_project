@@ -26,6 +26,12 @@ h3 {
     box-shadow: 0 0 5px;
 }
 
+.stat {
+    color: #f89939;
+    font-weight: 700;
+    font-size: 38px;
+}
+
 .helperText {
     font-style: italic;
     margin-top: -7px;

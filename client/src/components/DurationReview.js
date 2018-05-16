@@ -8,7 +8,7 @@ class DurationReview extends Component {
         return (
             <Col sm={4} className="kpiBlock">
                 <h3>Average Review Duration</h3>
-                <h3>7 days</h3>
+                <h3 className="stat">7 days</h3>
             </Col>
         )
     }

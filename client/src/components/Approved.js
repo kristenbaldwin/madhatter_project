@@ -8,7 +8,7 @@ class Approved extends Component {
         return (
             <Col sm={4} className="kpiBlock">
                 <h3>Opportunities Approved</h3>
-                <h3>2</h3>
+                <h3 className="stat">2</h3>
             </Col>
         )
     }
