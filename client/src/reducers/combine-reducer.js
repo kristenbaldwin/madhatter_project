@@ -12,7 +12,6 @@ import financialsQuestionData from './qa-add-financials-score-reducer'
 
 const rootReducer = combineReducers({
     founderQuestionData: addScoreReducer,
-    questions: questions,
     founders: founders,
     deleteState: deleteState,
     legal: legal,
@@ -21,7 +20,6 @@ const rootReducer = combineReducers({
     productQuestionData: productQuestionData,
     financials: financials,
     financialsQuestionData: financialsQuestionData
-
 })
 
 export default rootReducer;
