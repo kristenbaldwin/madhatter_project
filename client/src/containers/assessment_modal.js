@@ -1,17 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Radio, Tab, Tabs, Popover, Button, Tooltip, Modal, OverlayTrigger } from 'react-bootstrap';
-import '../components/modal.css'
+import '../components/modal.css';
 import addScore from '../actions/ADD_SCORE'
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux'
-import store from '../index'
+import { connect } from 'react-redux';
+import store from '../index';
 import { FormGroup } from 'react-bootstrap';
-import FounderQuestion from '../components/FounderQuestion'
+import FounderQuestion from '../components/FounderQuestion';
 import clearData from '../actions/CLEAR_DATA';
 import LegalQuestion from '../components/LegalQuestion';
-import ProductQuestion from '../components/ProductQuestion'
-import FinancialsQuestion from '../components/FinancialsQuestion'
+import ProductQuestion from '../components/ProductQuestion';
+import FinancialsQuestion from '../components/FinancialsQuestion';
 
 
 class AssessmentModal extends React.Component {
