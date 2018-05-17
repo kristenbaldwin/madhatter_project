@@ -11,16 +11,34 @@ module.exports = function (app, db) {
             approved_by: req.body.approved_by,
         })
     })
-    
-    // testing only
-    app.get('/api/get_opportunity', (req,res) => {
-        pendingOpp = ['pending','pending2']
-        approvedOpp = ['approved']
 
-        dummy = {
-            pending: pendingOpp,
-            approved: approvedOpp
+    // testing only
+    app.get('/api/get_opportunity', (req, res) => {
+        let userObject = [];
+        var oppList = [];
+        var opp = {
+            name: 'Apple',
+            status: 'active'
         }
-        res.json(dummy)
+        var opp2 = {
+            name: 'Apple',
+            status: 'pending'
+        }
+        var opp3 = {
+            name: 'Apple',
+            status: 'pending'
+        }
+        for (var i =0;i<3;i++) {
+            var opp = {
+                name: 'Apple',
+                status: 'pending'
+            }
+            oppList.push(opp)
+        }
+
+        userObject.opps = oppList;
+        
+        res.json(oppList)
     })
+
 }

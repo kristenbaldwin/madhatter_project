@@ -19,18 +19,16 @@ class App extends Component {
     // })
   }
 
-  componentWillMount() {
-    this.getOpportunity();
-  }
+  // componentWillMount() {
+  //   this.getOpportunity();
+  // }
 
   render() {
     return (
-      <Router>
-      <div>
-          <Route path="/login" component={Login}/>
-          <Route path="/success" component={Success}/>
-      </div>
-      </Router>
+     <div>
+       <AssessmentModal />
+       <OppModal />
+     </div>
     );
   }
 }
