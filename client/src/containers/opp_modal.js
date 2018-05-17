@@ -86,7 +86,7 @@ class OppModal extends React.Component {
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <form onSubmit={this.handleForm}>
                         <Modal.Header closeButton>
-                            <Modal.Title><i class="fal fa-plus-circle"></i>  Create Opportunity</Modal.Title>
+                            <Modal.Title><i class="fas fa-plus-circle"></i>  Create Opportunity</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <Tabs defaultActiveKey={1}>
