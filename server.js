@@ -57,34 +57,34 @@ app.use(passport.session());
 
 
 
-app.get('/login', (req, res) => {
-    res.send(`
-    <h1>Login</h1>
-    <form action="/login" method="post">
-        <div>
-            <label>Username:</label>
-            <input type="text" name="username"/>
-        </div>
-        <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
-        </div>
-        <div>
-            <input type="submit" value="Log In"/>
-        </div>
-    </form>
-    <form method="GET" action="/success">
-    <button type="submit">Success page</button>
-    </form>
+// app.get('/login', (req, res) => {
+//     res.send(`
+//     <h1>Login</h1>
+//     <form action="/login" method="post">
+//         <div>
+//             <label>Username:</label>
+//             <input type="text" name="username"/>
+//         </div>
+//         <div>
+//             <label>Password:</label>
+//             <input type="password" name="password"/>
+//         </div>
+//         <div>
+//             <input type="submit" value="Log In"/>
+//         </div>
+//     </form>
+//     <form method="GET" action="/success">
+//     <button type="submit">Success page</button>
+//     </form>
     
     
-    `)
-})
+//     `)
+// })
 
 
 app.post('/login',
 
-    passport.authenticate('local', {    successRedirect: '/success',
+    passport.authenticate('local', {    successRedirect: 'http://localhost:3000/success',
                                         failureRedirect: '/fail'})
 
 
@@ -225,7 +225,7 @@ passport.deserializeUser(function(user,done){
 
 
 
-const port = 4444
+const port = 4000;
 app.listen(port, () => {
 
     console.log('Server running on ' + port)
