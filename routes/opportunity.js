@@ -13,14 +13,27 @@ module.exports = function (app, db) {
     })
     
     // testing only
-    app.get('/api/get_opportunity', (req,res) => {
-        pendingOpp = ['pending','pending2']
-        approvedOpp = ['approved']
-
-        dummy = {
-            pending: pendingOpp,
-            approved: approvedOpp
+    app.get('/api/get_opportunity', (req, res) => {
+        let userObject = []
+        let oppList = []
+        opp = {
+            name: 'Apple',
+            status: 'active'
         }
-        res.json(dummy)
+        opp2 = {
+            name: 'Apple',
+            status: 'pending'
+        }
+        opp3 = {
+            name: 'Apple',
+            status: 'pending'
+        }
+        oppList.push(opp);
+        oppList.push(opp2);
+        oppList.push(opp3);
+ 
+        // userObject.opps = oppList;
+ 
+        res.json(oppList)
     })
 }

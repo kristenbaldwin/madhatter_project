@@ -5,10 +5,19 @@ import '../styles/MainDash.css';
 
 class UnderReview extends Component {
     render() {
+        // console.log("state", this.props.opps);
+        let i = 0;
+        this.props.opps.map(opp => {
+            if (opp.status === 'pending') {
+                return i++;
+            }
+            return '';
+        })
+
         return (
             <Col sm={4} className="kpiBlock teacup">
                 <h3>Opportunities Under Review</h3>
-                <h3 className="stat">3</h3>
+                <h3 className="stat">{i}</h3>
             </Col>
         )
     }
@@ -16,7 +25,7 @@ class UnderReview extends Component {
 
 function mapStateToProps(state) {
     return {
-        
+        opps: state.opps
     }
 }
 

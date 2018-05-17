@@ -1,15 +1,9 @@
 //Reducer
 
-const initialState = {
-    opps: []
-}
-
-function showAllOpps(state = initialState, action) {
+function showAllOpps(state = [], action) {
     switch(action.type) {
         case "ALL_OPPS":
-        return {
-            opps: action.opps
-        }
+            return state.concat(action.opps);
         default:
             return state;
     }
