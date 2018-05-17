@@ -7,12 +7,16 @@ import RequestedCap from './RequestedCap';
 import CommittedCap from './CommittedCap';
 import GraphApproved from './GraphApproved';
 import AllOpps from './AllOpps';
+import AddOpp from './AddOpp';
 import '../styles/MainDash.css';
 
 class MainDash extends Component {
     render() {
         return (
             <Grid className="kpis">
+                <Row className="addOpp">
+                    <AddOpp />
+                </Row>
                 <Row className="kpisRow">
                     <UnderReview />
                     <Approved />

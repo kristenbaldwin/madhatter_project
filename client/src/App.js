@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './styles/App.css';
-import { Grid, Col, Row } from 'react-bootstrap';
+import { Grid, Row } from 'react-bootstrap';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MainDash from './components/MainDash';
 import loadOpp from './actions/loadOpp';
-// import Nav from './components/Nav';
+import TopNav from './components/TopNav';
 import Footer from './components/Footer';
+
+const NoMatch = ({ location }) => (
+  <div>
+    <h3>Page not found: {location.pathname}</h3>
+  </div>
+);
 
 class App extends Component {
   // componentDidMount() {
@@ -27,17 +34,20 @@ class App extends Component {
 
   render() {
     return (
-      <Grid fluid={true}>
-        {/* <Nav /> */}
-        <Row>
-          <Col>
-            <MainDash />
-          </Col>
-        </Row>
-        <Row>
-          <Footer />
-        </Row>
-      </Grid>
+      <BrowserRouter>
+        <Grid fluid={true}>
+          <TopNav />
+          <Switch>
+            <Route exact path="/" component={MainDash} />
+            {/* <Route path="/opps" component={Opportunity} /> */}
+            {/* <Route path="/logout" component={Logout} /> */}
+            <Route component={NoMatch} />
+          </Switch>
+          <Row>
+            <Footer />
+          </Row>
+        </Grid>
+      </BrowserRouter>
     )
   }
 }

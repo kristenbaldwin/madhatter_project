@@ -13,6 +13,23 @@ h3 {
     margin-top: 10px;
 }
 
+.addOpp > div {
+    padding-left: 7px;
+}
+
+.btn-primary {
+    font-size: 20px;
+    background-color: #624484;
+    padding: 12px;
+    border-color: #231134;
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #3e2b54;
+    border-color: #3e2b54;
+}
+
 .kpis {
     width: 90%;
     margin: 30px auto;
