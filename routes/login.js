@@ -62,25 +62,3 @@ passport.deserializeUser(function(user,done){
         return done(null, { firstName: 'Foo', lastName: 'Bar' });
   })
 }
-// DATABASE SETUP CONFIG
-// const Sequelize = require('sequelize'),
-//     sequelize = new Sequelize('postgres://postgres:postgres@localhost:5432/testing')
-
-
-
-// const attributes = {
-//     username: {
-//         type: Sequelize.STRING,
-//         allowNull: false,
-//         unique: true
-//     },
-
-//     password: {
-//         type: Sequelize.STRING
-//     }
-// }
-
-// let User = sequelize.define('users', attributes)
-
-
-// DATABASE SETUP END
