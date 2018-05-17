@@ -1,5 +1,4 @@
 const express = require('express');
-<<<<<<< HEAD
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -38,10 +37,10 @@ let User = sequelize.define('users', attributes)
 
 const app = express();
 
-let users = [   {   username: 'bob',
-                    password: '$2a$08$qr1XCJQpXU9A8DdU3cTyz.BV0OaBJ..uakoKYGjd9yRAXjhOL5tXa' // password: 123
-                }
-            ];
+// let users = [   {   username: 'bob',
+//                     password: '$2a$08$qr1XCJQpXU9A8DdU3cTyz.BV0OaBJ..uakoKYGjd9yRAXjhOL5tXa' // password: 123
+//                 }
+//             ];
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -230,26 +229,4 @@ const port = 4000;
 app.listen(port, () => {
 
     console.log('Server running on ' + port)
-=======
-const bodyParser = require('body-parser');
-const pg = require('pg');
-const db = require('./db/connection');
-
-const port = 4000;
-const app = express();
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-
-require('./routes')(app, db);
-
-app.listen(port, () => {
-    console.log('Live on port ' + port);
->>>>>>> 5ad7d0372dbed92e1fcc3b6dc139261aa39f86cd
 })
