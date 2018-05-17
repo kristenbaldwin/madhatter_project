@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 
 
 class Success extends Component {
@@ -7,6 +7,7 @@ class Success extends Component {
         return(
             <div>
                 <h1>Success page</h1>
+                
             </div>
         )
     }

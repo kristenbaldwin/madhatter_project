@@ -10,13 +10,13 @@ import Success from './routes/Success';
 
 class App extends Component {
 
-  // testing
+  testing
   getOpportunity() {
     fetch('/api/get_opportunity')
-    .then(res => {
-      res.json()
-      .then(dummy)
-    })
+    // .then(res => {
+    //   res.json()
+    //   .then(dummy)
+    // })
   }
 
   componentWillMount() {
