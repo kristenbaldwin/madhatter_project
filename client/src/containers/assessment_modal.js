@@ -14,7 +14,7 @@ import ProductQuestion from '../components/ProductQuestion'
 import FinancialsQuestion from '../components/FinancialsQuestion'
 
 
-class QModal extends React.Component {
+class AssessmentModal extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -131,4 +131,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ addScore: addScore, clearData: clearData }, (dispatch))
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(QModal);
+export default connect(mapStateToProps, mapDispatchToProps)(AssessmentModal);

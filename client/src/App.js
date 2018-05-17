@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
-import Modal from './containers/modal'
+import AssessmentModal from './containers/assessment_modal'
+import OppModal from './containers/opp_modal'
+import './styles/App.css';
 
 class App extends Component {
+
+  // testing
+  // getOpportunity() {
+  //   fetch('/api/get_opportunity')
+  //   .then(res => {
+  //     res.json()
+  //     .then(dummy)
+  //   })
+  // }
+
+  // componentWillMount() {
+  //   this.getOpportunity();
+  // }
+
   render() {
     return (
      <div>
-       <Modal />
+       <AssessmentModal />
+       <OppModal />
      </div>
     );
   }
