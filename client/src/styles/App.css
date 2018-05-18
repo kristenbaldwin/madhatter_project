@@ -11,3 +11,16 @@ body {
   min-height: 100%;
   padding-bottom: 10rem; 
 }
+
+.notFound {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.notFound a {
+  color: #624484;
+}
+
+.notFound img {
+  width: 30%;
+}
