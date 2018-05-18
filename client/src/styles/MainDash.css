@@ -25,7 +25,12 @@ h3 {
     margin-bottom: 20px;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #3e2b54;
+    border-color: #3e2b54;
+}
+
+.btn-primary:active, .btn-primary:visited, .btn-primary:active:focus, .btn-primary:active:hover {
     background-color: #3e2b54;
     border-color: #3e2b54;
 }

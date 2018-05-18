@@ -26,7 +26,8 @@
     "pg": "^7.4.3",
     "react-redux": "^5.0.7",
     "reactjs-popup": "^1.1.1",
-    "sequelize": "^4.37.7"
+    "sequelize": "^4.37.7",
+    "uid-safe": "^2.1.5"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"

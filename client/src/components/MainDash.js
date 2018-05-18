@@ -7,7 +7,7 @@ import RequestedCap from './RequestedCap';
 import CommittedCap from './CommittedCap';
 import GraphApproved from './GraphApproved';
 import AllOpps from './AllOpps';
-import AddOpp from './AddOpp';
+import OppModal from '../containers/opp_modal';
 import '../styles/MainDash.css';
 
 class MainDash extends Component {
@@ -15,7 +15,7 @@ class MainDash extends Component {
         return (
             <Grid className="kpis">
                 <Row className="addOpp">
-                    <AddOpp />
+                    <OppModal />
                 </Row>
                 <Row className="kpisRow">
                     <UnderReview />

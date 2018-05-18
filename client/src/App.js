@@ -37,9 +37,9 @@ class App extends Component {
     })
   }
 
-  // componentWillMount() {
-  //   this.getOpportunity();
-  // }
+  componentWillMount() {
+    this.getOpportunity();
+  }
 
   render() {
     return (

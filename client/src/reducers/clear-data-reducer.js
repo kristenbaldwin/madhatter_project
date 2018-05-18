@@ -6,7 +6,7 @@ export default function(state=founders(), action) {
             case "CLEAR_DATA":
                 console.log('connected')
                 return founders();
-                break;
-                default: return state;
+                // break;
+            default: return state;
         }
     }

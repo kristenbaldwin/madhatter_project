@@ -20,18 +20,18 @@ class TopNav extends Component {
                         <LinkContainer to='/'>
                             <NavItem>Dashboard</NavItem>
                         </LinkContainer>
-                        <LinkContainer to ='/opps'>
+                        <LinkContainer to='/opps'>
                             <NavItem>All Opportunities</NavItem>
                         </LinkContainer>
                     </Nav>
                     <Nav pullRight>
-                        <Navbar.Text>
-                            Signed in: Mark Otto
-                        </Navbar.Text>
                         <LinkContainer to='/logout'>
                             <NavItem>Logout</NavItem>
                         </LinkContainer>
                     </Nav>
+                    <Navbar.Text pullRight>
+                            Signed in: Mark Otto
+                    </Navbar.Text>
                 </Navbar.Collapse>
             </Navbar>
         )

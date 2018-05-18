@@ -25,7 +25,7 @@ class UnderReview extends Component {
 
 function mapStateToProps(state) {
     return {
-        opps: state.opps
+        opps: state.opportunities
     }
 }
 
