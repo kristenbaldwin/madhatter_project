@@ -7,6 +7,10 @@ import MainDash from './components/MainDash';
 import loadOpp from './actions/loadOpp';
 import TopNav from './components/TopNav';
 import Footer from './components/Footer';
+import Login from './routes/Login';
+import Success from './routes/Success';
+
+
 
 const NoMatch = ({ location }) => (
   <div className='notFound'>
@@ -33,9 +37,9 @@ class App extends Component {
     })
   }
 
-  componentWillMount() {
-    this.getOpportunity();
-  }
+  // componentWillMount() {
+  //   this.getOpportunity();
+  // }
 
   render() {
     return (

@@ -8,6 +8,7 @@ const founders = require('./founders');
 const legal = require('./legal');
 const financial = require('./financial');
 const opp_product = require('./opp_product');
+const login = require('./login');
 
 module.exports = function (app, db) {
     users(app, db)
@@ -17,4 +18,5 @@ module.exports = function (app, db) {
     legal(app, db)
     financial(app, db)
     opp_product(app, db)
+    login(app, db)
 }

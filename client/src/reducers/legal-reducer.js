@@ -1,0 +1,1 @@
+export default function(){return([{id: 12, question: "Clean cap table?", answer: "" },{id: 13, question: "Pending litigation or active legal issues?", answer: ""},{id: 14, question: "Is the venture a formalized legal entity ready for investment?", answer: "" },{id: 15, question: "IP currently protected?", answer:"" }])}
