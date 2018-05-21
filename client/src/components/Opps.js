@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../styles/Opps.css';
 
@@ -18,7 +19,7 @@ class Opps extends Component {
                         <div className="singleOpp">
                            <img src='' alt="opp-logo" />
                            <h4>Opportunity Name</h4>
-                           <Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(1)}>View/Edit</Button>
+                           <Link to="/opps/1"><Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(1)}>View/Edit</Button></Link>
                         </div>
                         <hr />
                         <div className="singleOpp">

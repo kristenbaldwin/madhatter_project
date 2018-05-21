@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Login from './routes/Login';
 import Success from './routes/Success';
 import Opps from './components/Opps';
+import OneOpp from './components/OneOpp';
 
 
 const NoMatch = ({ location }) => (
@@ -48,7 +49,8 @@ class App extends Component {
           <TopNav />
           <Switch>
             <Route exact path="/" component={MainDash} />
-            <Route path="/opps" component={Opps} />
+            <Route exact path="/opps" component={Opps} />
+            <Route path="/opps/:id" component={OneOpp} />
             {/* <Route path="/logout" component={Logout} /> */}
             <Route component={NoMatch} />
           </Switch>
@@ -57,6 +59,10 @@ class App extends Component {
           </Row>
         </Grid>
       </BrowserRouter>
+        // <div>
+        //    <AssessmentModal />
+        //    <OppModal />
+        // </div>
     )
   }
 }
