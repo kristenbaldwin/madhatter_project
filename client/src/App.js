@@ -9,7 +9,7 @@ import TopNav from './components/TopNav';
 import Footer from './components/Footer';
 import Login from './routes/Login';
 import Success from './routes/Success';
-
+import Opps from './components/Opps';
 
 
 const NoMatch = ({ location }) => (
@@ -48,7 +48,7 @@ class App extends Component {
           <TopNav />
           <Switch>
             <Route exact path="/" component={MainDash} />
-            {/* <Route path="/opps" component={Opportunity} /> */}
+            <Route path="/opps" component={Opps} />
             {/* <Route path="/logout" component={Logout} /> */}
             <Route component={NoMatch} />
           </Switch>

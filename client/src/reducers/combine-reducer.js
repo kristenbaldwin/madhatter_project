@@ -10,6 +10,7 @@ import productQuestionData from './qa-add-product-score-reducer'
 import financials from '../reducers/financials-reducer'
 import financialsQuestionData from './qa-add-financials-score-reducer'
 import loadOppReducer from './loadOppReducer';
+import opp_id from './singleOpp_reducer';
 
 const rootReducer = combineReducers({
     founderQuestionData: addScoreReducer,
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
     productQuestionData: productQuestionData,
     financials: financials,
     financialsQuestionData: financialsQuestionData,
-    opportunities: loadOppReducer
+    opportunities: loadOppReducer,
+    opp_id: opp_id
 })
 
 export default rootReducer;
