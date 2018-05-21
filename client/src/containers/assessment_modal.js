@@ -1,17 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Radio, Tab, Tabs, Popover, Button, Tooltip, Modal, OverlayTrigger } from 'react-bootstrap';
-import '../components/modal.css'
+import '../components/modal.css';
 import addScore from '../actions/ADD_SCORE'
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux'
-import store from '../index'
+import { connect } from 'react-redux';
+import store from '../index';
 import { FormGroup } from 'react-bootstrap';
-import FounderQuestion from '../components/FounderQuestion'
+import FounderQuestion from '../components/FounderQuestion';
 import clearData from '../actions/CLEAR_DATA';
 import LegalQuestion from '../components/LegalQuestion';
-import ProductQuestion from '../components/ProductQuestion'
-import FinancialsQuestion from '../components/FinancialsQuestion'
+import ProductQuestion from '../components/ProductQuestion';
+import FinancialsQuestion from '../components/FinancialsQuestion';
 
 
 class AssessmentModal extends React.Component {
@@ -21,6 +21,13 @@ class AssessmentModal extends React.Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.submitFounders = this.submitFounders.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.submitLegal = this.submitLegal.bind(this);
+    this.submitOpp_Product = this.submitOpp_Product.bind(this);
+    this.submitFinancials = this.submitFinancials.bind(this);
+    this.submitAll = this.submitAll.bind(this);
+
     // this.handleAnswer = this.handleAnswer.bind(this);
     // this.handleForm = this.handleForm.bind(this);
 
@@ -30,6 +37,112 @@ class AssessmentModal extends React.Component {
 
     };
   };
+
+
+  submitFounders(){
+    return new Promise(function(res, rej){
+      for(var i = 0; i < 11; i++){
+        let data = {
+          question: store.getState().founderQuestionData[i].id,
+          answer: store.getState().founderQuestionData[i].answer,
+          opp_id: 5
+        }
+        console.log(data)
+        fetch('/api/create_founders', {
+          method: 'POST',
+          headers: new Headers({ 'Content-Type': 'application/json' }),
+          body: JSON.stringify(data)
+        }).then(res => {
+              res.json().then(data =>
+                  console.log('State Updated')
+              )
+          })
+     }
+    })
+    }
+
+    submitLegal(){
+     return new Promise(function(res, rej){
+      for(var i = 0; i < 4; i++){
+        let data = {
+          question: store.getState().legalQuestionData[i].id,
+          answer: store.getState().legalQuestionData[i].answer,
+          opp_id: 5
+        }
+        console.log(data)
+        fetch('/api/create_legal', {
+          method: 'POST',
+          headers: new Headers({ 'Content-Type': 'application/json' }),
+          body: JSON.stringify(data)
+        }).then(res => {
+              res.json().then(data =>
+                  console.log('State Updated')
+              )
+          })
+     }
+     })
+      
+      }
+
+      submitOpp_Product(){
+        return new Promise(function(res, rej){
+          for(var i = 0; i < 6; i++){
+            let data = {
+              question: store.getState().productQuestionData[i].id,
+              answer: store.getState().productQuestionData[i].answer,
+              opp_id: 5
+            }
+            console.log(data)
+            fetch('/api/create_opp_product', {
+              method: 'POST',
+              headers: new Headers({ 'Content-Type': 'application/json' }),
+              body: JSON.stringify(data)
+            }).then(res => {
+                  res.json().then(data =>
+                      console.log('State Updated')
+                  )
+              })
+         }
+        })
+       
+        }
+
+        submitFinancials(){
+         return new Promise(function(res, rej){
+          for(var i = 0; i < 6; i++){
+            let data = {
+              question: store.getState().financialsQuestionData[i].id,
+              answer: store.getState().financialsQuestionData[i].answer,
+              opp_id: 5
+            }
+            console.log(data)
+            fetch('/api/create_financial', {
+              method: 'POST',
+              headers: new Headers({ 'Content-Type': 'application/json' }),
+              body: JSON.stringify(data)
+            }).then(res => {
+                  res.json().then(data =>
+                      console.log('State Updated')
+                  )
+              })
+         }
+         })
+         
+          }
+
+          submitAll(event){
+            event.preventDefault();
+             this.submitFounders().then(this.submitLegal()).then(this.submitOpp_Product()).then(this.submitFinancials()).catch(function(err){
+               if (err){
+                 console.log(err)
+               }
+             })
+            }
+          
+  
+  handleSubmit(){
+    this.setState({ show: false })
+  }
 
   handleClose() {
     this.setState({ show: false });
@@ -107,7 +220,7 @@ class AssessmentModal extends React.Component {
               </Tabs>
             </Modal.Body>
             <Modal.Footer>
-              <Button type="submit" bsStyle="primary">Submit</Button>
+              <Button onClick={this.submitAll} type="submit" bsStyle="primary">Submit</Button>
               <Button onClick={this.handleClose}>Close</Button>
             </Modal.Footer>
           </form>

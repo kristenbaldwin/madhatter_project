@@ -2,20 +2,16 @@ import React from 'react';
 import { Radio, FormGroup } from 'react-bootstrap';
 import '../components/modal.css';
 import addScore from '../actions/ADD_SCORE';
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import clearData from '../actions/CLEAR_DATA'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import clearData from '../actions/CLEAR_DATA';
 
 class FinancialsQuestion extends React.Component{
     constructor(props){
         super(props);
-        this.handleChange = this.handleChange.bind(this)
+        //this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(question, answer){
-
-
-    }
 
     render(){
         return(
