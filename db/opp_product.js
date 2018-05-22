@@ -2,10 +2,9 @@
 module.exports = (db, Sequelize) => {
 
     const opp_product = db.define('opp_product', {
-        username: Sequelize.STRING,
-        password: Sequelize.STRING,
-        email: Sequelize.STRING,
-        role: Sequelize.STRING,
+        question: Sequelize.STRING,
+        answer: Sequelize.STRING,
+        opp_id: Sequelize.INTEGER,
     }, {
             timestamps: false,
             freezeTableName: true

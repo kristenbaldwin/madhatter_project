@@ -6,7 +6,7 @@ module.exports = (db, Sequelize) => {
         founder: Sequelize.STRING,
         est: Sequelize.STRING,
         industry: Sequelize.STRING,
-        attachment: Sequelize.STRING,
+        attachments: Sequelize.STRING,
         created_by: Sequelize.INTEGER,
         approved_by: Sequelize.INTEGER,
     }, {

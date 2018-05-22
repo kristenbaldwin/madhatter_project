@@ -13,7 +13,6 @@ import loadOppReducer from './loadOppReducer';
 
 const rootReducer = combineReducers({
     founderQuestionData: addScoreReducer,
-    questions: questions,
     founders: founders,
     deleteState: deleteState,
     legal: legal,
