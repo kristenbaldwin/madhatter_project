@@ -7,7 +7,6 @@ import MainDash from './components/MainDash';
 import loadOpp from './actions/loadOpp';
 import TopNav from './components/TopNav';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AssessmentModal from './containers/assessment_modal'
 import OppModal from './containers/opp_modal'
 
