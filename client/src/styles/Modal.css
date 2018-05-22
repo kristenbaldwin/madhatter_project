@@ -81,3 +81,13 @@ label {
 .assessModal {
     float: right;
 }
+
+@media (max-width: 770px) {
+    .modalRow {
+        width: 100%;
+    }
+
+    .assessModal {
+        float: none;
+    }
+}

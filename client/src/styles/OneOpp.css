@@ -1,6 +1,7 @@
 .section {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 10px;
@@ -35,11 +36,12 @@
 .overallScore {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: baseline;
 }
 
 .section-logo {
-    margin-right: 30px;
+    margin-right: 20px;
     width: 100px;
 }
 
@@ -53,13 +55,16 @@
     margin-top: 20px;
 }
 
+.marginRight {
+    margin-right: 20px;
+}
+
 .btn-warning {
     font-size: 20px;
     background-color: #f89939;
     border-color: #de7308;
     padding: 12px;
     margin-bottom: 20px;
-    margin-left: 20px;
 }
 
 .btn-warning:hover, .btn-warning:focus {

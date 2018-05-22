@@ -11,12 +11,12 @@ class OneOpp extends Component {
     render() {
         return (
             <Grid className="whiteBackground">
-                <Row>
-                    <Col xs={12} className="section">
+                <Row className="flex">
+                    <Col xs={8} className="section">
                         <img src='' alt='logo' className="section-logo" />
                         <h1 className="section-name">Opportunity Name</h1>
-                        <AssessmentModal />
                     </Col>
+                    <AssessmentModal />
                 </Row>
                 <Row>
                     <Col xs={12} className="section multiLines">

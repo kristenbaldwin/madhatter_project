@@ -77,7 +77,7 @@ class AssessmentModal extends React.Component {
 
 
     return (
-      <Col xs={12}>
+      <Col xs={4} className="modalRow">
         <Button bsStyle="primary" className="assessModal" onClick={this.handleShow}>
           Create Assessment
         </Button>
