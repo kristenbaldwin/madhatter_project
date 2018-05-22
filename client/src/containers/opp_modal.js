@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Radio, Tab, Tabs, Popover, Button, Tooltip, Modal, OverlayTrigger } from 'react-bootstrap';
-import '../components/modal.css';
+// import ReactDOM from 'react-dom';
+import { Tab, Tabs, Button, Modal, Col } from 'react-bootstrap';
+import '../styles/Modal.css';
 import addScore from '../actions/ADD_SCORE';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import store from '../index';
+// import store from '../index';
 import { FormGroup } from 'react-bootstrap';
 import clearData from '../actions/CLEAR_DATA';
 
@@ -84,29 +84,20 @@ class OppModal extends React.Component {
     render() {
 
 
-        const popover = (
-            <Popover id="modal-popover" title="popover">
-                very popover. such engagement
-            </Popover>
-        );
-        const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
         const statesArray = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
         let states = [];
         states = statesArray.map(function (state) {
             return (<option>{state}</option>)
         })
         return (
-            <div>
-                <p>Click to get the full Modal experience!</p>
-
-                <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-                    Launch demo modal
-              </Button>
-
+            <Col xs={12}>
+                <Button bsStyle="primary" onClick={this.handleShow}>
+                    Create New Opportunity
+                </Button>
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <form onSubmit={this.handleForm}>
                         <Modal.Header closeButton>
-                            <Modal.Title><i class="fas fa-plus-circle"></i>  Create Opportunity</Modal.Title>
+                            <Modal.Title><i class="fas fa-plus-circle"></i>&nbsp;Create Opportunity</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <Tabs defaultActiveKey={1}>
@@ -153,7 +144,6 @@ class OppModal extends React.Component {
                                         <div className="cityInput">
                                             <input id="cityInput" name="city" placeholder="City" type="text" ref='city'></input>
                                         </div>
-
                                         <div className="stateInput">
                                             <select id="stateInput" name="state" placeholder="State" type="text" ref='state'>
                                                 {states}
@@ -174,20 +164,17 @@ class OppModal extends React.Component {
                                         <div className="linkedinInput">
                                             <input id="linkedinInput" name="linkedin" placeholder="LinkedIn" type="url" ref='linkedin'></input>
                                         </div>
-
-
                                     </FormGroup>
                                 </Tab>
                             </Tabs>
-
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button type="submit" bsStyle="primary" onClick={this.submitNewOpp.bind(this)}>Submit</Button>
+                            <Button type="submit" className="modalBtn" bsStyle="primary" onClick={this.submitNewOpp.bind(this)}>Submit</Button>
                             <Button onClick={this.handleClose}>Close</Button>
                         </Modal.Footer>
                     </form>
                 </Modal>
-            </div>
+            </Col>
         );
     }
 }

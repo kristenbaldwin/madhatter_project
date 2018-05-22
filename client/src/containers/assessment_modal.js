@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Radio, Tab, Tabs, Popover, Button, Tooltip, Modal, OverlayTrigger } from 'react-bootstrap';
-import '../components/modal.css';
+import '../styles/Modal.css';
 import addScore from '../actions/ADD_SCORE'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import store from '../index';
+import Store from '../store';
 import { FormGroup } from 'react-bootstrap';
 import FounderQuestion from '../components/FounderQuestion';
 import clearData from '../actions/CLEAR_DATA';
@@ -44,8 +44,8 @@ class AssessmentModal extends React.Component {
       let foundersList = [];
       for(var i = 0; i < 11; i++){
         let data = {
-          question: store.getState().founderQuestionData[i].id,
-          answer: store.getState().founderQuestionData[i].answer,
+          question: Store.getState().founderQuestionData[i].id,
+          answer: Store.getState().founderQuestionData[i].answer,
           opp_id: 5
         }
         foundersList.push(data)
@@ -67,8 +67,8 @@ class AssessmentModal extends React.Component {
       let legalList = [];
       for(var i = 0; i < 4; i++){
         let data = {
-          question: store.getState().legalQuestionData[i].id,
-          answer: store.getState().legalQuestionData[i].answer,
+          question: Store.getState().legalQuestionData[i].id,
+          answer: Store.getState().legalQuestionData[i].answer,
           opp_id: 5
         }
         legalList.push(data)
@@ -91,8 +91,8 @@ class AssessmentModal extends React.Component {
           let oppList = [];
           for(var i = 0; i < 6; i++){
             let data = {
-              question: store.getState().productQuestionData[i].id,
-              answer: store.getState().productQuestionData[i].answer,
+              question: Store.getState().productQuestionData[i].id,
+              answer: Store.getState().productQuestionData[i].answer,
               opp_id: 5
             }
             oppList.push(data);
@@ -115,8 +115,8 @@ class AssessmentModal extends React.Component {
            let financialsList = [];
           for(var i = 0; i < 6; i++){
             let data = {
-              question: store.getState().financialsQuestionData[i].id,
-              answer: store.getState().financialsQuestionData[i].answer,
+              question: Store.getState().financialsQuestionData[i].id,
+              answer: Store.getState().financialsQuestionData[i].answer,
               opp_id: 5
             }
             financialsList.push(data)
@@ -137,7 +137,7 @@ class AssessmentModal extends React.Component {
 
           submitAll(event){
             event.preventDefault();
-            var state = store.getState();
+            var state = Store.getState();
             var founders = state.founderQuestionData;
             var financial = state.financialsQuestionData;
             var legal = state.legalQuestionData;
@@ -170,7 +170,7 @@ class AssessmentModal extends React.Component {
             } else if (count === 0)
 
             {
-            //console.log(store.getState())
+            //console.log(Store.getState())
              this.submitFounders().then(this.submitLegal()).then(this.submitOpp_Product()).then(this.submitFinancials()).then(this.handleSubmit()).catch(function(err){
                if (err){
                  console.log(err)

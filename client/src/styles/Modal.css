@@ -70,3 +70,10 @@ label {
     color: grey;
     font-weight: 100;
 }
+
+.modalBtn {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+}

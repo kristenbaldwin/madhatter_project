@@ -1,0 +1,31 @@
+.navbar-default {
+    margin-left: -15px;
+    margin-right: -15px;
+    border-radius: 0;
+    /* background-color: #624484; */
+    background-color: #231134;
+    border-color: transparent;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 20px;
+}
+  
+.navbar-default .navbar-nav > li > a {
+    color: white !important;
+    font-size: 16px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    /* background-color: #624484; */
+    background-color: #231134;
+}
+
+.navbar-brand:hover, .navbar-nav > li > a:hover {
+    color: #f89939 !important;
+}
+
+.navbar-default .navbar-text {
+    color: #f89939;
+}

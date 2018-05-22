@@ -40,34 +40,29 @@ module.exports = function (app, db) {
             // }))
         })
     })
-
-
+    
     // testing only
     app.get('/api/get_opportunity', (req, res) => {
-        let userObject = [];
-        var oppList = [];
-        var opp = {
+        let userObject = []
+        let oppList = []
+        opp = {
             name: 'Apple',
             status: 'active'
         }
-        var opp2 = {
+        opp2 = {
             name: 'Apple',
             status: 'pending'
         }
-        var opp3 = {
+        opp3 = {
             name: 'Apple',
             status: 'pending'
         }
-        for (var i = 0; i < 3; i++) {
-            var opp = {
-                name: 'Apple',
-                status: 'pending'
-            }
-            oppList.push(opp)
-        }
-
-        userObject.opps = oppList;
-
+        oppList.push(opp);
+        oppList.push(opp2);
+        oppList.push(opp3);
+ 
+        // userObject.opps = oppList;
+ 
         res.json(oppList)
     })
 

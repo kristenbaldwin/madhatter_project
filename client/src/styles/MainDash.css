@@ -1,0 +1,82 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: lightgray;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 8rem; 
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+.addOpp > div {
+    padding-left: 7px;
+}
+
+.btn-primary {
+    font-size: 20px;
+    background-color: #624484;
+    padding: 12px;
+    border-color: #231134;
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #3e2b54;
+    border-color: #3e2b54;
+}
+
+.btn-primary:active, .btn-primary:visited, .btn-primary:active:focus, .btn-primary:active:hover {
+    background-color: #3e2b54;
+    border-color: #3e2b54;
+}
+
+.kpis {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.kpisRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kpiBlock {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    margin: 7px;
+    border-radius: 3px;
+    border: 1.4px solid #624484;
+    box-shadow: 0 0 5px;
+}
+
+.stat {
+    color: #f89939;
+    font-weight: 700;
+    font-size: 38px;
+}
+
+.helperText {
+    font-style: italic;
+    margin-top: -7px;
+}
+
+.footer {
+    background-color: #231134;
+    padding: 20px;
+    width: 100%;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer > p {
+    margin: 0;
+}

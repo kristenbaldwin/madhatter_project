@@ -1,3 +1,5 @@
+// Reducer
+
 export default function loadOppReducer(state=[], action) {
     switch (action.type) {
         case 'loadOpp':
