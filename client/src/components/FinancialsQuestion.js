@@ -9,13 +9,9 @@ import clearData from '../actions/CLEAR_DATA';
 class FinancialsQuestion extends React.Component{
     constructor(props){
         super(props);
-        this.handleChange = this.handleChange.bind(this)
+        //this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(question, answer){
-
-
-    }
 
     render(){
         return(

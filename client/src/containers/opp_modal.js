@@ -73,31 +73,17 @@ class OppModal extends React.Component {
             body: JSON.stringify(data)
         }).then(res => {
             res.json().then(data =>
-                console.log('State Updated')
+                console.log('data recieved: ', data)
             )
         })
+
             .then(this.handleClose())
     }
 
 
 
     render() {
-        //   let founderQuestions = [];
-        //   founderQuestions = this.props.founders.map(function (questionData) {
-        //     return (<FounderQuestion id={questionData.id} key={questionData.id} questionText={questionData.question} />)
-        //   })
-        //   let legalQuestions = [];
-        //   legalQuestions = this.props.legal.map(function (questionData) {
-        //     return (<LegalQuestion id={questionData.id} key={questionData.id} questionText={questionData.question} />)
-        //   })
-        //   let productQuestions = [];
-        //   productQuestions = this.props.product.map(function(questionData){
-        //     return (<ProductQuestion id={questionData.id} key={questionData.id} questionText={questionData.question} />)
-        //   })
-        //   let financialsQuestions = [];
-        //   financialsQuestions = this.props.financials.map(function(questionData){
-        //     return (<FinancialsQuestion id={questionData.id} key={questionData.id} questionText={questionData.question} />)
-        //   })
+
 
         const statesArray = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
         let states = [];
@@ -116,16 +102,16 @@ class OppModal extends React.Component {
                         </Modal.Header>
                         <Modal.Body>
                             <Tabs defaultActiveKey={1}>
-                                <Tab eventKey={1} title="General">
+                                <Tab id="general" eventKey={1} title="General">
                                     <FormGroup id="generalInfo">
                                         <div className="nameInput">
-                                            <input id="nameInput" name="name" placeholder="Name" type="text" ref='name'></input>
+                                            <input id="nameInput" name="name" placeholder="Name" type="text" ref='name' required></input>
                                         </div>
                                         <div className="foundersInput">
-                                            <input id="foundersInput" name="founders" placeholder="Founders" type="text" ref='founder'></input>
+                                            <input id="foundersInput" name="founders" placeholder="Founders" type="text" ref='founder' required></input>
                                         </div>
                                         <div className="industryInput">
-                                            <input id="industryInput" name="industry" placeholder="Industry" type="text" ref='industry'></input>
+                                            <input id="industryInput" name="industry" placeholder="Industry" type="text" ref='industry' required></input>
                                         </div>
 
                                         <div className="estInput">
@@ -137,7 +123,7 @@ class OppModal extends React.Component {
                                             <input id="attachmentsInput" type="file" name="pic" accept="image/*" ref='attachments'></input>
                                         </div>
                                         <div className="createdByInput">
-                                            <select id="createdByInput" name="createdby" ref='created_by'>
+                                            <select id="createdByInput" name="createdby" ref='created_by' required>
                                                 <option>Submitted By</option>
                                                 <option>User1</option>
                                                 <option>User2</option>
@@ -145,7 +131,7 @@ class OppModal extends React.Component {
                                         </div>
                                     </FormGroup>
                                 </Tab>
-                                <Tab eventKey={2} title="Contact Information">
+                                <Tab id="contact" eventKey={2} title="Contact Information">
                                     <FormGroup id="contactInfo">
                                         <div className="phoneInput">
                                             <input id="phoneInput" name="phone" placeholder="Phone" type="text" ref='phone'></input>

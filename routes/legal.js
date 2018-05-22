@@ -1,10 +1,12 @@
 module.exports = function (app, db) {
 
     app.post('/api/create_legal', (req, res) => {
-        db.legal.create({
-            question: req.body.question,
-            answer: req.body.answer,
-            opp_id: req.body.opp_id,
-        })
+        for (var i = 0; i < 4; i++) {
+            db.legal.create({
+                question: req.body.data[i].question,
+                answer: req.body.data[i].answer,
+                opp_id: req.body.data[i].opp_id,
+            })
+        }
     })
 }

@@ -14,7 +14,6 @@ import opp_id from './singleOpp_reducer';
 
 const rootReducer = combineReducers({
     founderQuestionData: addScoreReducer,
-    questions: questions,
     founders: founders,
     deleteState: deleteState,
     legal: legal,
