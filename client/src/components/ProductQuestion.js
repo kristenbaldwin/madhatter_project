@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio, FormGroup } from 'react-bootstrap';
-import '../components/modal.css';
+import '../styles/Modal.css';
 import addScore from '../actions/ADD_SCORE';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

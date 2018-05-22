@@ -77,3 +77,7 @@ label {
     font-weight: 400;
     margin-bottom: 0;
 }
+
+.assessModal {
+    float: right;
+}

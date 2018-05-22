@@ -3,6 +3,7 @@ import { Grid, Col, Row, Button } from 'react-bootstrap';
 import Background from './Background';
 import Scoring from './Scoring';
 import NextSteps from './NextSteps';
+import AssessmentModal from '../containers/assessment_modal';
 // import { connect } from 'react-redux';
 import '../styles/OneOpp.css';
 
@@ -14,6 +15,7 @@ class OneOpp extends Component {
                     <Col xs={12} className="section">
                         <img src='' alt='logo' className="section-logo" />
                         <h1 className="section-name">Opportunity Name</h1>
+                        <AssessmentModal />
                     </Col>
                 </Row>
                 <Row>
