@@ -25,13 +25,13 @@ class Opps extends Component {
                         <div className="singleOpp">
                            <img src='' alt="opp-logo" />
                            <h4>Opportunity Name</h4>
-                           <Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(2)}>View/Edit</Button>
+                           <Link to="/opps/2"><Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(2)}>View/Edit</Button></Link>
                         </div>
                         <hr />
                         <div className="singleOpp">
                            <img src='' alt="opp-logo" />
                            <h4>Opportunity Name</h4>
-                           <Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(3)}>View/Edit</Button>
+                           <Link to="/opps/3"><Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(3)}>View/Edit</Button></Link>
                         </div>
                         <hr />
                     </Col>
