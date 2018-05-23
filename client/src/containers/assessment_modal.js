@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Radio, Tab, Tabs, Popover, Button, Tooltip, Modal, OverlayTrigger } from 'react-bootstrap';
+import { Radio, Tab, Tabs, Col, Button, Modal } from 'react-bootstrap';
 import '../styles/Modal.css';
 import addScore from '../actions/ADD_SCORE'
 import { bindActionCreators } from 'redux';
@@ -222,22 +222,19 @@ class AssessmentModal extends React.Component {
       return (<FinancialsQuestion id={questionData.id} key={questionData.id} questionText={questionData.question} />)
     })
 
-    const popover = (
-      <Popover id="modal-popover" title="popover">
-        very popover. such engagement
-          </Popover>
-    );
-    const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
+    // const popover = (
+    //   <Popover id="modal-popover" title="popover">
+    //     very popover. such engagement
+    //       </Popover>
+    // );
+    // const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
 
 
     return (
-      <div>
-        <p>Click to get the full Modal experience!</p>
-
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Launch demo modal
-            </Button>
-
+      <Col xs={12}>
+        <Button bsStyle="primary" className="assessModal" onClick={this.handleShow}>
+          Create Assessment
+        </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <form onSubmit={this.handleForm}>
             <Modal.Header closeButton>
@@ -265,7 +262,7 @@ class AssessmentModal extends React.Component {
             </Modal.Footer>
           </form>
         </Modal>
-      </div>
+      </Col>
     );
   }
 }
