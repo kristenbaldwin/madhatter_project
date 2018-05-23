@@ -10,7 +10,7 @@ import clearData from '../actions/CLEAR_DATA';
 import LegalQuestion from '../components/LegalQuestion';
 import ProductQuestion from '../components/ProductQuestion';
 import FinancialsQuestion from '../components/FinancialsQuestion';
-
+import store from '../store';
 
 class AssessmentModal extends React.Component {
   constructor(props, context) {
