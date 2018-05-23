@@ -8,6 +8,5 @@ module.exports = function (app, db) {
                 opp_id: req.body.data[i].opp_id,
             })
         }
-
     })
 }

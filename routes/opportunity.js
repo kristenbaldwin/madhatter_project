@@ -26,13 +26,50 @@ module.exports = function (app, db) {
                 linkedin: req.body.linkedin,
                 opp_id: opportunity.id,
             }), res.json(opportunity.id)
-
-            //     app.get('/api/get_opp_id', (req, res) => {
-            //     res.json(opportunity.id)
-            // })
         })
     })
-    
+
+
+    // call this in the front end
+    app.get('/api/load_opportunities', (req, res) => {
+        let allOpportunities = {};
+        let foundersSum = 0;
+        let legalSum = 0;
+        let financialSum = 0;
+        let oppProductSum = 0;
+
+        db.opportunities.findAll({
+            include: [
+                {
+                    model: db.contact,
+                    attributes: 
+                    [   'phone',
+                        'email',
+                        'address',
+                        'city',
+                        'state',
+                        'postal',
+                        'country',
+                        'website',
+                        'linkedin',
+                        'opp_id'    ]
+                },
+                { model: db.founders, attributes: ['answer'] },
+                { model: db.legal, attributes: ['answer'] },
+                { model: db.financial, attributes: ['answer'] },
+                { model: db.opp_product, attributes: ['answer'] }
+            ]
+        })
+            .then(data => {
+                allOpportunities = {
+                    data: data
+                }
+
+                res.json(allOpportunities);
+            })
+    })
+
+
     // testing only
     app.get('/api/get_opportunity', (req, res) => {
         let userObject = []
@@ -52,10 +89,11 @@ module.exports = function (app, db) {
         oppList.push(opp);
         oppList.push(opp2);
         oppList.push(opp3);
- 
+
         // userObject.opps = oppList;
- 
+
         res.json(oppList)
     })
+
 
 }//end module
