@@ -18,7 +18,7 @@ import NoMatch from './components/NoMatch';
 
 class App extends Component {
   getOpportunity() {
-    fetch('/api/get_opportunity')
+    fetch('/api/load_opportunities')
     .then(res => {
       res.json()
       .then(dummy => {
@@ -54,7 +54,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    opps: state.opps
+    opps: state.opportunities
   }
 }
 
