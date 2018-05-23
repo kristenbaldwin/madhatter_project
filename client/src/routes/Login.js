@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Grid, Form, FormGroup, Col, FormControl, Button, CheckBox } from 'react-bootstrap';
+import { Row, Form, FormGroup, Col, FormControl, Button } from 'react-bootstrap';
 import '../styles/login.css';
 
 import Forms from '../components/forms';
@@ -7,15 +7,12 @@ import Forms from '../components/forms';
 class Login extends Component {
     render() {
 
-        return(
-            <div>
-                <div className='bg'>
-                </div>
-                <div className="logo">
-                <img width={400}  src="https://static1.squarespace.com/static/59959e593e00be6a7ba7fda3/t/5a0e05990d9297da4e05d122/1525281574090/?format=1500w" alt="logo" />
-                </div>
-                
-                <Grid>
+        return( 
+                <Row>
+                    <Col className='bg'></Col>
+                    <Row className="logo">
+                        <img width={400}  src="https://static1.squarespace.com/static/59959e593e00be6a7ba7fda3/t/5a0e05990d9297da4e05d122/1525281574090/?format=1500w" alt="logo" />
+                    </Row>
                     <Form className="login" horizontal action="http://localhost:4000/login" method="post">
                         <FormGroup controlId="formHorizontalEmail">
                             <Col sm={4}>
@@ -39,14 +36,12 @@ class Login extends Component {
                         </FormGroup>
 
                         <FormGroup>
-                            <Col smOffset={4} sm={10}>
+                            <Col smOffset={4} sm={4}>
                             <Button type="submit">Login</Button>
                             </Col>
                         </FormGroup>
                     </Form>
-                </Grid>
-               
-            </div>
+                </Row>
         )
     }
 }

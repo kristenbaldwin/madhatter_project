@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Radio, Tab, Tabs, Col, Button, Modal } from 'react-bootstrap';
+import { Tab, Tabs, Col, Button, Modal, FormGroup } from 'react-bootstrap';
 import '../styles/Modal.css';
-import addScore from '../actions/ADD_SCORE'
+import addScore from '../actions/ADD_SCORE';
+import store from '../store.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Store from '../index';
-import { FormGroup } from 'react-bootstrap';
 import FounderQuestion from '../components/FounderQuestion';
 import clearData from '../actions/CLEAR_DATA';
 import LegalQuestion from '../components/LegalQuestion';
@@ -236,17 +235,9 @@ class AssessmentModal extends React.Component {
       return (<FinancialsQuestion id={questionData.id} key={questionData.id} questionText={questionData.question} />)
     })
 
-    // const popover = (
-    //   <Popover id="modal-popover" title="popover">
-    //     very popover. such engagement
-    //       </Popover>
-    // );
-    // const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
-
-
     return (
-      <Col xs={4} className="modalRow">
-        <Button bsStyle="primary" className="assessModal" onClick={this.handleShow}>
+      <Col className={this.props.colName}>
+        <Button bsStyle="primary" className={this.props.className} onClick={this.handleShow}>
           {this.props.text}
         </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
@@ -271,7 +262,7 @@ class AssessmentModal extends React.Component {
               </Tabs>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.submitAll} type="submit" bsStyle="primary" className="modalBtn">Submit</Button>
+              <Button onClick={this.submitAll} type="submit" className="modalBtn" bsStyle="primary">Submit</Button>
               <Button onClick={this.handleClose}>Close</Button>
             </Modal.Footer>
           </form>
