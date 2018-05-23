@@ -5,13 +5,8 @@ import { Grid, Row } from 'react-bootstrap';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import MainDash from './components/MainDash';
 import loadOpp from './actions/loadOpp';
-import TopNav from './components/TopNav';
+// import TopNav from './components/TopNav';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import AssessmentModal from './containers/assessment_modal'
-import OppModal from './containers/opp_modal'
-
-
 import Login from './routes/Login';
 import Success from './routes/Success';
 import Opps from './components/Opps';
@@ -30,9 +25,6 @@ const NoMatch = ({ location }) => (
 );
 
 class App extends Component {
-  // componentDidMount() {
-  //   this.props.onDashLoad()
-  // }
   getOpportunity() {
     fetch('/api/get_opportunity')
     .then(res => {
@@ -51,7 +43,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Grid fluid={true}>
-          <TopNav />
+          {/* <TopNav /> */}
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/dashboard" component={MainDash} />

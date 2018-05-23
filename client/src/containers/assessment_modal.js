@@ -1,11 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Radio, Tab, Tabs, Col, Button, Modal } from 'react-bootstrap';
+import { Tab, Tabs, Col, Button, Modal } from 'react-bootstrap';
 import '../styles/Modal.css';
-import addScore from '../actions/ADD_SCORE'
+import addScore from '../actions/ADD_SCORE';
+import store from '../store';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { FormGroup } from 'react-bootstrap';
 import FounderQuestion from '../components/FounderQuestion';
 import clearData from '../actions/CLEAR_DATA';
 import LegalQuestion from '../components/LegalQuestion';

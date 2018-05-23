@@ -17,7 +17,7 @@ class TopNav extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <LinkContainer to='/'>
+                        <LinkContainer to='/dashboard'>
                             <NavItem>Dashboard</NavItem>
                         </LinkContainer>
                         <LinkContainer to='/opps'>

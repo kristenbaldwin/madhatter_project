@@ -8,28 +8,32 @@ import CommittedCap from './CommittedCap';
 import GraphApproved from './GraphApproved';
 import AllOpps from './AllOpps';
 import OppModal from '../containers/opp_modal';
+import TopNav from './TopNav';
 import '../styles/MainDash.css';
 
 class MainDash extends Component {
     render() {
         return (
-            <Grid className="kpis">
-                <Row className="addOpp">
-                    <OppModal />
-                </Row>
-                <Row className="kpisRow">
-                    <UnderReview />
-                    <Approved />
-                    <DurationReview />
-                </Row>
-                <Row className="kpisRow">
-                    <RequestedCap />
-                    <CommittedCap />
-                </Row> 
-                <Row className="kpisRow">
-                    <AllOpps />
-                    <GraphApproved />
-                </Row>
+            <Grid fluid={true} className="nav-container">
+                <TopNav />
+                <Grid className="kpis">
+                    <Row className="addOpp">
+                        <OppModal />
+                    </Row>
+                    <Row className="kpisRow">
+                        <UnderReview />
+                        <Approved />
+                        <DurationReview />
+                    </Row>
+                    <Row className="kpisRow">
+                        <RequestedCap />
+                        <CommittedCap />
+                    </Row> 
+                    <Row className="kpisRow">
+                        <AllOpps />
+                        <GraphApproved />
+                    </Row>
+                </Grid>
             </Grid>
         )
     }
