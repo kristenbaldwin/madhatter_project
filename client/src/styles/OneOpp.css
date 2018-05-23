@@ -7,6 +7,11 @@
     margin-bottom: 10px;
 }
 
+/* .section .col-xs-1 {
+    padding-left: 28px;
+    padding-right: 0;
+} */
+
 .multiLines {
     align-items: flex-start;
 }

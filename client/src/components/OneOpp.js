@@ -25,11 +25,11 @@ launchModal(e){
                 <TopNav />
                 <Grid className="whiteBackground">
                     <Row className="flex">
-                        <Col xs={12} className="section">
+                        <Col xs={8} className="section">
                             <img src='' alt='logo' className="section-logo" />
                             <h1 className="section-name">Opportunity Name</h1>
-                            <AssessmentModal text="Create Assessment" />
                         </Col>
+                        <AssessmentModal text="Create Assessment" className="assessModal" colName="modalRow col-xs-4" />
                     </Row>
                     <Row>
                         <Col xs={12} className="section multiLines">
@@ -52,21 +52,21 @@ launchModal(e){
                     <Row className="separator">
                         <Col xs={12} className="section withBtn">
                             <h2>Background</h2>
-                            <AssessmentModal text="Edit" bsStyle="primary" className="btn-view">Edit</AssessmentModal>
+                            <AssessmentModal text="Edit" bsStyle="primary" className="btn-view" colName="section col-xs-1">Edit</AssessmentModal>
                         </Col>
                     </Row>
                     <Background />
                     <Row className="separator">
                         <Col xs={12} className="section withBtn">
                             <h2>Scoring</h2>
-                            <AssessmentModal text="Edit" bsStyle="primary" className="btn-view"></AssessmentModal>
+                            <AssessmentModal text="Edit" bsStyle="primary" className="btn-view" colName="section col-xs-1"></AssessmentModal>
                         </Col>
                     </Row>
                     <Scoring />
                     <Row className="separator">
                         <Col xs={12} className="section withBtn">
                             <h2>Next Steps</h2>
-                            <Button bsStyle="primary" className="btn-view">Edit</Button>
+                            <AssessmentModal text="Edit" bsStyle="primary" className="btn-view" colName="section col-xs-1"></AssessmentModal>
                         </Col>
                     </Row>
                     <NextSteps />
