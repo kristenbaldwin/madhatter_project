@@ -81,9 +81,10 @@ class OppModal extends React.Component {
             body: JSON.stringify(data)
         }).then(res => {
             res.json().then(data =>
-                console.log('State Updated')
+                console.log('data recieved: ', data)
             )
         })
+
             .then(this.handleClose())
     }
     }

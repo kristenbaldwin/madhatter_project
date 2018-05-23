@@ -21,7 +21,7 @@ launchModal(e){
     render() {
         return (
             <Grid className="whiteBackground">
-                <Row>
+                <Row className="flex">
                     <Col xs={12} className="section">
                         <img src='' alt='logo' className="section-logo" />
                         <h1 className="section-name">Opportunity Name</h1>

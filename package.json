@@ -29,9 +29,9 @@
     "react-redux": "^5.0.7",
     "reactjs-popup": "^1.1.1",
     "redux": "^4.0.0",
-    "sequelize": "^4.37.7",
     "uid-safe": "^2.1.5",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "sequelize": "^4.37.7"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"

@@ -15,6 +15,7 @@
 .singleOpp {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 20px auto;
     align-items: center;
@@ -24,4 +25,9 @@
     font-size: 16px;
     padding: 8px;
     margin-bottom: 0;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
 }

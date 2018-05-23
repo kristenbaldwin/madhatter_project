@@ -23,7 +23,7 @@ const NoMatch = ({ location }) => (
     <h3>Page not found: {location.pathname}</h3>
     <br />
     <h4>Would you tell me, please, which way I ought to go from here?</h4>
-    <h4>Try starting back at the <Link to="/">dashboard</Link> to find what you're looking for.</h4>
+    <h4>Try starting back at the <Link to="/dashboard">dashboard</Link> to find what you're looking for.</h4>
     <img src="https://images.khinsider.com/KINGDOM%20HEARTS%20X/Artwork/Characters/Wonderland/Cheshire%20Cat.png" alt="Cheshire Cat" />
   </div>
 );
@@ -52,7 +52,8 @@ class App extends Component {
         <Grid fluid={true}>
           <TopNav />
           <Switch>
-            <Route exact path="/" component={MainDash} />
+            <Route exact path="/" component={Login} />
+            <Route exact path="/dashboard" component={MainDash} />
             <Route exact path="/opps" component={Opps} />
             <Route path="/opps/:id" component={OneOpp} />
             {/* <Route path="/logout" component={Logout} /> */}
@@ -63,10 +64,6 @@ class App extends Component {
           </Row>
         </Grid>
       </BrowserRouter>
-        // <div>
-        //    <AssessmentModal />
-        //    <OppModal />
-        // </div>
     )
   }
 }

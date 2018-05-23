@@ -2,14 +2,14 @@ const Sequelize = require('sequelize');
 const connection = new Sequelize('postgres://localhost:5432/madhatter')
 
 const models = {
-    users: connection.import('./users'),
-    opportunities: connection.import('./opportunities'),
-    contact: connection.import('./contact'),
-    founders: connection.import('./founders'),
-    legal: connection.import('./legal'),
-    financial: connection.import('./financial'),
-    opp_product: connection.import('./opp_product'),
-    main_score: connection.import('./main_score'),
+  users: connection.import('./users'),
+  opportunities: connection.import('./opportunities'),
+  contact: connection.import('./contact'),
+  founders: connection.import('./founders'),
+  legal: connection.import('./legal'),
+  financial: connection.import('./financial'),
+  opp_product: connection.import('./opp_product'),
+  main_score: connection.import('./main_score'),
 };
 
 Object.keys(models).forEach(modelName => {
@@ -21,4 +21,20 @@ Object.keys(models).forEach(modelName => {
 models.connection = connection;
 models.Sequelize = Sequelize;
 
-module.exports =  models;
+
+//Relations
+models.founders.belongsTo(models.opportunities, { foreignKey: 'id' });
+models.legal.belongsTo(models.opportunities, { foreignKey: 'id' });
+models.financial.belongsTo(models.opportunities, { foreignKey: 'id' });
+models.opp_product.belongsTo(models.opportunities, { foreignKey: 'id' });
+models.contact.belongsTo(models.opportunities, { foreignKey: 'id' });
+
+
+models.opportunities.hasMany(models.founders, { foreignKey: 'opp_id' });
+models.opportunities.hasMany(models.legal, { foreignKey: 'opp_id' });
+models.opportunities.hasMany(models.financial, { foreignKey: 'opp_id' });
+models.opportunities.hasMany(models.opp_product, { foreignKey: 'opp_id' });
+models.opportunities.hasMany(models.contact, { foreignKey: 'opp_id' });
+
+
+module.exports = models;

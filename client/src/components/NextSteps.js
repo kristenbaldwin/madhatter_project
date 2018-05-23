@@ -15,8 +15,8 @@ class NextSteps extends Component {
                     </FormGroup>
                     </div>
                 </Col>
-                <Col sm={12}>
-                    <Button bsStyle="primary">Approve</Button>
+                <Col xs={12} className="section multiLines">
+                    <Button bsStyle="primary" className="marginRight">Approve</Button>
                     <Button bsStyle="warning">Reject</Button>
                 </Col>
             </Row>
