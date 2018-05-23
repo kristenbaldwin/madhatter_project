@@ -5,9 +5,11 @@ import '../styles/Modal.css';
 import addScore from '../actions/ADD_SCORE';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import store from '../index';
+//import store from '../index';
 import { FormGroup } from 'react-bootstrap';
 import clearData from '../actions/CLEAR_DATA';
+
+
 
 class OppModal extends React.Component {
     constructor(props, context) {
@@ -48,6 +50,7 @@ class OppModal extends React.Component {
 
     submitNewOpp(e) {
         e.preventDefault();
+
         let data = {
             // opp data
             name: this.refs.name.value,
@@ -67,6 +70,11 @@ class OppModal extends React.Component {
             website: this.refs.website.value,
             linkedin: this.refs.linkedin.value,
         };
+
+       if(!data.name) {
+           alert('Must enter an Opportunity name')
+       } else{
+
         fetch('/api/create_opportunity', {
             method: 'POST',
             headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -78,6 +86,8 @@ class OppModal extends React.Component {
         })
             .then(this.handleClose())
     }
+    }
+
 
 
 

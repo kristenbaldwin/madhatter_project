@@ -233,7 +233,7 @@ class AssessmentModal extends React.Component {
     return (
       <Col xs={12}>
         <Button bsStyle="primary" className="assessModal" onClick={this.handleShow}>
-          Create Assessment
+          {this.props.text}
         </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <form onSubmit={this.handleForm}>

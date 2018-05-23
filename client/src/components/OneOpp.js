@@ -8,6 +8,16 @@ import AssessmentModal from '../containers/assessment_modal';
 import '../styles/OneOpp.css';
 
 class OneOpp extends Component {
+    constructor(props){
+        super(props)
+        this.launchModal = this.launchModal.bind(this)
+    }
+
+launchModal(e){
+    e.preventDefault();
+    <AssessmentModal />
+}
+
     render() {
         return (
             <Grid className="whiteBackground">
@@ -15,7 +25,7 @@ class OneOpp extends Component {
                     <Col xs={12} className="section">
                         <img src='' alt='logo' className="section-logo" />
                         <h1 className="section-name">Opportunity Name</h1>
-                        <AssessmentModal />
+                        <AssessmentModal text="Create Assessment" />
                     </Col>
                 </Row>
                 <Row>
@@ -39,14 +49,14 @@ class OneOpp extends Component {
                 <Row className="separator">
                     <Col xs={12} className="section withBtn">
                         <h2>Background</h2>
-                        <Button bsStyle="primary" className="btn-view">Edit</Button>
+                        <AssessmentModal text="Edit" bsStyle="primary" className="btn-view">Edit</AssessmentModal>
                     </Col>
                 </Row>
                 <Background />
                 <Row className="separator">
                     <Col xs={12} className="section withBtn">
                         <h2>Scoring</h2>
-                        <Button bsStyle="primary" className="btn-view">Edit</Button>
+                        <AssessmentModal text="Edit" bsStyle="primary" className="btn-view"></AssessmentModal>
                     </Col>
                 </Row>
                 <Scoring />
