@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab, Tabs, Col, Button, Modal } from 'react-bootstrap';
 import '../styles/Modal.css';
 import addScore from '../actions/ADD_SCORE';
-import store from '../store';
+import store from '../store.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import FounderQuestion from '../components/FounderQuestion';
@@ -10,7 +10,6 @@ import clearData from '../actions/CLEAR_DATA';
 import LegalQuestion from '../components/LegalQuestion';
 import ProductQuestion from '../components/ProductQuestion';
 import FinancialsQuestion from '../components/FinancialsQuestion';
-import store from '../store';
 
 class AssessmentModal extends React.Component {
   constructor(props, context) {
@@ -227,14 +226,6 @@ class AssessmentModal extends React.Component {
     financialsQuestions = this.props.financials.map(function (questionData) {
       return (<FinancialsQuestion id={questionData.id} key={questionData.id} questionText={questionData.question} />)
     })
-
-    // const popover = (
-    //   <Popover id="modal-popover" title="popover">
-    //     very popover. such engagement
-    //       </Popover>
-    // );
-    // const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
-
 
     return (
       <Col xs={4} className="modalRow">

@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import addScoreReducer from '../reducers/qa-add-founder-score-reducer'
-import questions from '../reducers/qa-reducer';
+// import questions from '../reducers/qa-reducer';
 import founders from '../reducers/founders-reducer'
 import deleteState from '../reducers/clear-data-reducer'
 import legal from '../reducers/legal-reducer'

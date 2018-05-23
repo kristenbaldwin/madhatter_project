@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Grid, Row, Form, FormGroup, Col, FormControl, Button, CheckBox } from 'react-bootstrap';
+import { Row, Form, FormGroup, Col, FormControl, Button } from 'react-bootstrap';
 import '../styles/login.css';
 
 import Forms from '../components/forms';
@@ -7,14 +7,7 @@ import Forms from '../components/forms';
 class Login extends Component {
     render() {
 
-        return(
-            // <div>
-            //     <div className='bg'>
-            //     </div>
-            //     <div className="logo">
-            //     <img width={400}  src="https://static1.squarespace.com/static/59959e593e00be6a7ba7fda3/t/5a0e05990d9297da4e05d122/1525281574090/?format=1500w" alt="logo" />
-            //     </div>
-                
+        return( 
                 <Row>
                     <Col className='bg'></Col>
                     <Row className="logo">
@@ -49,8 +42,6 @@ class Login extends Component {
                         </FormGroup>
                     </Form>
                 </Row>
-               
-            // </div>
         )
     }
 }
