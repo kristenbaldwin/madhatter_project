@@ -1,10 +1,11 @@
 import React from 'react';
-import { Tab, Tabs, Col, Button, Modal } from 'react-bootstrap';
+import { Tab, Tabs, Col, Button, Modal, FormGroup } from 'react-bootstrap';
 import '../styles/Modal.css';
 import addScore from '../actions/ADD_SCORE';
 import store from '../store.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Store from '../index';
 import FounderQuestion from '../components/FounderQuestion';
 import clearData from '../actions/CLEAR_DATA';
 import LegalQuestion from '../components/LegalQuestion';
@@ -38,23 +39,23 @@ class AssessmentModal extends React.Component {
 
   submitFounders() {
     return new Promise(function (res, rej) {
-      let foudersObject = {};
+      let foundersObject = {};
       let foundersList = [];
       for (var i = 0; i < 11; i++) {
         let data = {
-          question: store.getState().founderQuestionData[i].id,
-          answer: store.getState().founderQuestionData[i].answer,
-          opp_id: 6
+          question: Store.getState().founderQuestionData[i].id,
+          answer: Store.getState().founderQuestionData[i].answer,
+          opp_id: 5
         }
         foundersList.push(data)
       }
-      foudersObject = {
+      foundersObject = {
         data: foundersList
       }
       fetch('/api/create_founders', {
         method: 'POST',
         headers: new Headers({ 'Content-Type': 'application/json' }),
-        body: JSON.stringify(foudersObject)
+        body: JSON.stringify(foundersObject)
       }).then(res => {
         res.json().then(foudersObject =>
           console.log('State Updated')
@@ -69,9 +70,9 @@ class AssessmentModal extends React.Component {
       let legalList = [];
       for (var i = 0; i < 4; i++) {
         let data = {
-          question: store.getState().legalQuestionData[i].id,
-          answer: store.getState().legalQuestionData[i].answer,
-          opp_id: 6
+          question: Store.getState().legalQuestionData[i].id,
+          answer: Store.getState().legalQuestionData[i].answer,
+          opp_id: 5
         }
         legalList.push(data)
       }
@@ -97,8 +98,8 @@ class AssessmentModal extends React.Component {
       let oppProductList = [];
       for (var i = 0; i < 6; i++) {
         let data = {
-          question: store.getState().productQuestionData[i].id,
-          answer: store.getState().productQuestionData[i].answer,
+          question: Store.getState().productQuestionData[i].id,
+          answer: Store.getState().productQuestionData[i].answer,
           opp_id: 6
         }
         oppProductList.push(data);
@@ -118,14 +119,15 @@ class AssessmentModal extends React.Component {
     })
   }
 
+      
   submitFinancials() {
     return new Promise(function (res, rej) {
       let financialsObject = {};
       let financialsList = [];
       for (var i = 0; i < 6; i++) {
         let data = {
-          question: store.getState().financialsQuestionData[i].id,
-          answer: store.getState().financialsQuestionData[i].answer,
+          question: Store.getState().financialsQuestionData[i].id,
+          answer: Store.getState().financialsQuestionData[i].answer,
           opp_id: 6
         }
         financialsList.push(data)
@@ -149,30 +151,30 @@ class AssessmentModal extends React.Component {
 
   submitAll(event) {
     event.preventDefault();
-    var state = store.getState();
+    var state = Store.getState();
     var founders = state.founderQuestionData;
     var financial = state.financialsQuestionData;
     var legal = state.legalQuestionData;
     var product = state.productQuestionData;
     var count = 0;
-
     for (var x = 0; x < founders.length; x++) {
-      if (founders[x].answer === "") {
+      if (founders[x].answer === '') {
         count = count + 1;
+       
       }
     }
     for (var y = 0; y < financial.length; y++) {
-      if (financial[y].answer === "") {
+      if (financial[y].answer === '') {
         count = count + 1
       }
     }
     for (var z = 0; z < legal.length; z++) {
-      if (legal[z].answer === "") {
+      if (legal[z].answer === '') {
         count = count + 1;
       }
     }
     for (var w = 0; w < product.length; w++) {
-      if (founders[w].answer === "") {
+      if (founders[w].answer === '') {
         count = count + 1;
       }
     }
@@ -180,8 +182,8 @@ class AssessmentModal extends React.Component {
     if (count > 0) {
       alert('You must answer all questions')
     } else if (count === 0) {
-      //console.log(store.getState())
-      this.submitFounders().then(this.submitLegal()).then(this.submitOpp_Product()).then(this.submitFinancials()).then(this.handleSubmit()).catch(function (err) {
+      //console.log(Store.getState())
+      this.submitFounders().then(this.submitLegal()).then(this.submitOpp_Product()).then(this.submitFinancials()).then(this.handleSubmit()).then(this.handleClose()).catch(function (err) {
         if (err) {
           console.log(err)
         }
@@ -190,8 +192,14 @@ class AssessmentModal extends React.Component {
   }
 
 
+
+          
+          
+  
+
   handleSubmit() {
     this.setState({ show: false })
+    this.handleClose();
   }
 
   handleClose() {
@@ -230,7 +238,7 @@ class AssessmentModal extends React.Component {
     return (
       <Col xs={4} className="modalRow">
         <Button bsStyle="primary" className="assessModal" onClick={this.handleShow}>
-          Create Assessment
+          {this.props.text}
         </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <form onSubmit={this.handleForm}>
