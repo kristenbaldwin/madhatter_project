@@ -45,7 +45,7 @@ class AssessmentModal extends React.Component {
         let data = {
           question: Store.getState().founderQuestionData[i].id,
           answer: Store.getState().founderQuestionData[i].answer,
-          opp_id: 8
+          opp_id: Store.getState().opp_id.id
         }
         foundersList.push(data)
       }
@@ -72,7 +72,7 @@ class AssessmentModal extends React.Component {
         let data = {
           question: Store.getState().legalQuestionData[i].id,
           answer: Store.getState().legalQuestionData[i].answer,
-          opp_id: 8
+          opp_id: Store.getState().opp_id.id
         }
         legalList.push(data)
       }
@@ -100,7 +100,7 @@ class AssessmentModal extends React.Component {
         let data = {
           question: Store.getState().productQuestionData[i].id,
           answer: Store.getState().productQuestionData[i].answer,
-          opp_id: 8
+          opp_id: Store.getState().opp_id.id
         }
         oppProductList.push(data);
       }
@@ -128,7 +128,7 @@ class AssessmentModal extends React.Component {
         let data = {
           question: Store.getState().financialsQuestionData[i].id,
           answer: Store.getState().financialsQuestionData[i].answer,
-          opp_id: 8
+          opp_id: Store.getState().opp_id.id
         }
         financialsList.push(data)
       }
@@ -190,12 +190,6 @@ class AssessmentModal extends React.Component {
       })
     }
   }
-
-
-
-          
-          
-  
 
   handleSubmit() {
     this.setState({ show: false })
@@ -278,7 +272,8 @@ function mapStateToProps(state) {
     founders: state.founders,
     legal: state.legal,
     product: state.product,
-    financials: state.financials
+    financials: state.financials,
+    opp_id: state.opp_id
   }
 }
 

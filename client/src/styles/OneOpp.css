@@ -7,11 +7,6 @@
     margin-bottom: 10px;
 }
 
-/* .section .col-xs-1 {
-    padding-left: 28px;
-    padding-right: 0;
-} */
-
 .multiLines {
     align-items: flex-start;
 }
@@ -48,6 +43,8 @@
 .section-logo {
     margin-right: 20px;
     width: 100px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
 }
 
 .withBtn {

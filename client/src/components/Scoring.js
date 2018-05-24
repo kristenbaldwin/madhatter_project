@@ -1,16 +1,62 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
-//import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 class Scoring extends Component {
     render() {
+        // let founders = this.props.opps.filter(opp => opp.id === this.props.opp_id.id);
+        // console.log('founders', founders);
+        
+        let founders = this.props.opps.map((opp) => {
+            if (opp.id === this.props.opp_id.id) {
+                let score = 0;
+                for (var i = 0; i < opp.founders.length; i++) {
+                    score += opp.founders[i].answer;
+                }
+                return score;
+            }
+        })
+
+        let legal = this.props.opps.map((opp) => {
+            if (opp.id === this.props.opp_id.id) {
+                let score = 0;
+                for (var i = 0; i < opp.legals.length; i++) {
+                    score += opp.legals[i].answer;
+                }
+                return score;
+            }
+        })
+
+        let product = this.props.opps.map((opp) => {
+            if (opp.id === this.props.opp_id.id) {
+                let score = 0;
+                for (var i = 0; i < opp.opp_products.length; i++) {
+                    score += opp.opp_products[i].answer;
+                }
+                return score;
+            }
+        })
+
+        let financial = this.props.opps.map((opp) => {
+            if (opp.id === this.props.opp_id.id) {
+                let score = 0;
+                for (var i = 0; i < opp.financials.length; i++) {
+                    score += opp.financials[i].answer;
+                }
+                return score;
+            }
+        })
+
+        // let overall = founders + legal + product + financial;
+        let overall = founders[2] + legal[2] + product[2] + financial[2];
+       
         return (
             <Row>
                 <Col sm={12} className="section multiLines">
                     <div className="section-item overallScore">
                         <h4>Overall: </h4>&emsp;
                         <div className="scoreBox">
-                            <p>20</p>
+                            <p>{overall}</p>
                         </div>
                     </div>
                 </Col>
@@ -18,25 +64,25 @@ class Scoring extends Component {
                     <div className="section-item">
                         <h4>Founders</h4>
                         <div className="scoreBox">
-                            <p>8</p>
+                            <p>{founders}</p>
                         </div>
                     </div>
                     <div className="section-item">
                         <h4>Legal</h4>
                         <div className="scoreBox">
-                            <p>3</p>
+                            <p>{legal}</p>
                         </div>
                     </div>
                     <div className="section-item">
                         <h4>Product</h4>
                         <div className="scoreBox">
-                            <p>10</p>
+                            <p>{product}</p>
                         </div>
                     </div>
                     <div className="section-item">
                         <h4>Financial</h4>
                         <div className="scoreBox">
-                            <p>2</p>
+                            <p>{financial}</p>
                         </div>
                     </div>
                 </Col>
@@ -45,4 +91,11 @@ class Scoring extends Component {
     }
 }
 
-export default Scoring;
+function mapStateToProps(state) {
+    return {
+        opp_id: state.opp_id,
+        opps: state.opportunities
+    }
+}
+
+export default connect(mapStateToProps, null)(Scoring);

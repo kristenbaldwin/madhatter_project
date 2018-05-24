@@ -5,7 +5,7 @@ import Scoring from './Scoring';
 import NextSteps from './NextSteps';
 import AssessmentModal from '../containers/assessment_modal';
 import TopNav from './TopNav';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import '../styles/OneOpp.css';
 
 class OneOpp extends Component {
@@ -20,19 +20,72 @@ launchModal(e){
 }
 
     render() {
+        let oppInfo_1 = this.props.opps.map((opp) => {
+            if (opp.id === this.props.opp_id.id && this.props.opp_id.id === 9) {
+                return (
+                    <Col xs={8} className="section">
+                        <img src={require("../images/logo-1-final.jpg")} alt='logo' className="section-logo" />
+                        <h1 className="section-name">{opp.name}</h1>
+                    </Col>
+                )
+            } else if (opp.id === this.props.opp_id.id && this.props.opp_id.id === 10) {
+                return (
+                    <Col xs={8} className="section">
+                        <img src={require("../images/logo-2-final.jpg")} alt='logo' className="section-logo" />
+                        <h1 className="section-name">{opp.name}</h1>
+                    </Col>
+                )
+            } else if (opp.id === this.props.opp_id.id && this.props.opp_id.id === 11) {
+                return (
+                    <Col xs={8} className="section">
+                        <img src={require("../images/logo-3-final.jpg")} alt='logo' className="section-logo" />
+                        <h1 className="section-name">{opp.name}</h1>
+                    </Col>
+                )
+            }
+        })
+
+        let oppInfo_2 = this.props.opps.map((opp) => {
+            if (opp.approved_by === null) {
+                opp.approved_by = "N/A";
+            }
+            if (opp.id === this.props.opp_id.id) {
+                return (
+                    <Col xs={12} className="section multiLines">
+                        <div className="section-item">
+                            <h4>Status</h4>
+                            <p>Pending</p>
+                        </div>
+                        <div className="section-item">
+                            <h4>Entered By</h4>
+                            <p>{opp.created_by}<br />
+                            Date</p>
+                        </div>
+                        <div className="section-item">
+                            <h4>Approved By</h4>
+                            <p>{opp.approved_by}<br />
+                            Date</p>
+                        </div>
+                    </Col>
+                )
+            }
+        })
+
         return (
             <Grid fluid={true} className="nav-container">
                 <TopNav />
                 <Grid className="whiteBackground">
                     <Row className="flex">
-                        <Col xs={8} className="section">
+                    {oppInfo_1}
+                        {/* <Col xs={8} className="section">
                             <img src='' alt='logo' className="section-logo" />
                             <h1 className="section-name">Opportunity Name</h1>
-                        </Col>
+                        </Col> */}
                         <AssessmentModal text="Create Assessment" className="assessModal" colName="modalRow col-xs-4" />
                     </Row>
                     <Row>
-                        <Col xs={12} className="section multiLines">
+                        {oppInfo_2}
+                        {/* <Col xs={12} className="section multiLines">
                             <div className="section-item">
                                 <h4>Status</h4>
                                 <p>Pending</p>
@@ -47,7 +100,7 @@ launchModal(e){
                                 <p>Username<br />
                                 Date</p>
                             </div>
-                        </Col>
+                        </Col> */}
                     </Row>
                     <Row className="separator">
                         <Col xs={12} className="section withBtn">
@@ -76,4 +129,11 @@ launchModal(e){
     }
 }
 
-export default OneOpp;
+function mapStateToProps(state) {
+    return {
+        opp_id: state.opp_id,
+        opps: state.opportunities
+    }
+}
+
+export default connect(mapStateToProps, null)(OneOpp);
