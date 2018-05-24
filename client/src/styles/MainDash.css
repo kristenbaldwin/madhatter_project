@@ -82,6 +82,24 @@ h3 {
     font-size: 16px;
 }
 
+.smallLogo {
+    width: 50px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+}
+
+.displayOpp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 8px 0;
+}
+
+.displayOpp p {
+    margin-bottom: 0;
+}
+
 .footer > p {
     margin: 0;
 }

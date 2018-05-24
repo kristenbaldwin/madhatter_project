@@ -61,11 +61,11 @@ module.exports = function (app, db) {
             ]
         })
             .then(data => {
-                allOpportunities = {
-                    data: data
-                }
+                // allOpportunities = {
+                //     data: data
+                // }
 
-                res.json(allOpportunities);
+                res.json(data);
             })
     })
 

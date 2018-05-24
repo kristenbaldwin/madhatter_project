@@ -45,7 +45,7 @@ class AssessmentModal extends React.Component {
         let data = {
           question: Store.getState().founderQuestionData[i].id,
           answer: Store.getState().founderQuestionData[i].answer,
-          opp_id: 1
+          opp_id: 8
         }
         foundersList.push(data)
       }
@@ -72,7 +72,7 @@ class AssessmentModal extends React.Component {
         let data = {
           question: Store.getState().legalQuestionData[i].id,
           answer: Store.getState().legalQuestionData[i].answer,
-          opp_id: 1
+          opp_id: 8
         }
         legalList.push(data)
       }
@@ -100,7 +100,7 @@ class AssessmentModal extends React.Component {
         let data = {
           question: Store.getState().productQuestionData[i].id,
           answer: Store.getState().productQuestionData[i].answer,
-          opp_id: 1
+          opp_id: 8
         }
         oppProductList.push(data);
       }
@@ -128,7 +128,7 @@ class AssessmentModal extends React.Component {
         let data = {
           question: Store.getState().financialsQuestionData[i].id,
           answer: Store.getState().financialsQuestionData[i].answer,
-          opp_id: 1
+          opp_id: 8
         }
         financialsList.push(data)
       }
