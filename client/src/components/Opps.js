@@ -7,6 +7,19 @@ import '../styles/Opps.css';
 
 class Opps extends Component {
     render() {
+        let opps = this.props.opps.map((opp, i) => {
+            let oppPage = "/opps/" + opp.id;
+            return (
+                <div>
+                    <div className="singleOpp">
+                        <Link to={oppPage} onClick={() => this.props.onSelect(opp.id)}><img src={require("../images/logo-" + (i + 1) + "-final.jpg")} alt='logo' className="medLogo" /></Link>
+                        <h3>{opp.name}</h3>
+                        <Link to={oppPage} onClick={() => this.props.onSelect(opp.id)}><Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(opp.id)}>View/Edit</Button></Link>
+                    </div>
+                    <hr />
+                </div>
+            )
+        })
         return (
             <Grid fluid={true} className="nav-container">
                 <TopNav />
@@ -17,9 +30,9 @@ class Opps extends Component {
                         </Col>
                     </Row>
                     <Row className="allOpps">
-                        {/* Map through all opps in opportunities table */}
                         <Col xs={12}>
-                            <div className="singleOpp">
+                            {opps}
+                            {/* <div className="singleOpp">
                             <img src='' alt="opp-logo" />
                             <h4>Opportunity Name</h4>
                             <Link to="/opps/1"><Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(1)}>View/Edit</Button></Link>
@@ -36,12 +49,18 @@ class Opps extends Component {
                             <h4>Opportunity Name</h4>
                             <Link to="/opps/3"><Button bsStyle="primary btn-view" onClick={() => this.props.onSelect(3)}>View/Edit</Button></Link>
                             </div>
-                            <hr />
+                            <hr /> */}
                         </Col>
                     </Row>
                 </Grid>
             </Grid>
         )
+    }
+}
+
+function mapStateToProps(state) {
+    return {
+        opps: state.opportunities
     }
 }
 
@@ -54,4 +73,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Opps);
+export default connect(mapStateToProps, mapDispatchToProps)(Opps);

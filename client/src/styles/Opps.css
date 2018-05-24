@@ -16,8 +16,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 20px auto;
+    justify-content: space-between;
+    margin: 20px 40px;
+    padding: 0 40px;
     align-items: center;
 }
 
@@ -30,4 +31,10 @@
 .flex {
     display: flex;
     flex-wrap: wrap;
+}
+
+.medLogo {
+    width: 120px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
 }
