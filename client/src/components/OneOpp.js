@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Col, Row, Button } from 'react-bootstrap';
+import { Grid, Col, Row } from 'react-bootstrap';
 import Background from './Background';
 import Scoring from './Scoring';
 import NextSteps from './NextSteps';
@@ -43,6 +43,7 @@ launchModal(e){
                     </Col>
                 )
             }
+            return ''
         })
 
         let oppInfo_2 = this.props.opps.map((opp) => {
@@ -69,6 +70,7 @@ launchModal(e){
                     </Col>
                 )
             }
+            return ''
         })
 
         return (

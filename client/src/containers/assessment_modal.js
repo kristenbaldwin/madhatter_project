@@ -1,8 +1,7 @@
 import React from 'react';
-import { Tab, Tabs, Col, Button, Modal, FormGroup } from 'react-bootstrap';
+import { Tab, Tabs, Col, Button, Modal } from 'react-bootstrap';
 import '../styles/Modal.css';
 import addScore from '../actions/ADD_SCORE';
-import store from '../store.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Store from '../index';

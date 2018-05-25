@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 
 class Scoring extends Component {
     render() {
-        // let founders = this.props.opps.filter(opp => opp.id === this.props.opp_id.id);
-        // console.log('founders', founders);
-        
         let founders = this.props.opps.map((opp) => {
             if (opp.id === this.props.opp_id.id) {
                 let score = 0;
@@ -15,6 +12,7 @@ class Scoring extends Component {
                 }
                 return score;
             }
+            return ''
         })
 
         let legal = this.props.opps.map((opp) => {
@@ -25,6 +23,7 @@ class Scoring extends Component {
                 }
                 return score;
             }
+            return ''
         })
 
         let product = this.props.opps.map((opp) => {
@@ -35,20 +34,22 @@ class Scoring extends Component {
                 }
                 return score;
             }
+            return ''
         })
 
         let financial = this.props.opps.map((opp) => {
             if (opp.id === this.props.opp_id.id) {
                 let score = 0;
                 for (var i = 0; i < opp.financials.length; i++) {
-                    score += opp.financials[i].answer;
+                    score += opp.financials[i].answer; 
                 }
                 return score;
             }
+            return ''
         })
 
-        // let overall = founders + legal + product + financial;
-        let overall = founders[2] + legal[2] + product[2] + financial[2];
+        let index = this.props.opp_id.id - 9;
+        let overall = founders[index] + legal[index] + product[index] + financial[index];
        
         return (
             <Row>
