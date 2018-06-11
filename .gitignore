@@ -4,5 +4,6 @@
 # misc
 .DS_Store
 
+# from heroku documentation
 npm-debug.log
 /*.env
