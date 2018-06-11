@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
-const connection = new Sequelize('postgres://localhost:5432/madhatter')
+// const connection = new Sequelize('postgres://localhost:5432/madhatter')
+const connection = new Sequelize('postgres://cjpytfaalcynoi:e54501cbcad863f103adde340a376a411c3177d5dc7f601f661e73829c5e8956@ec2-23-21-238-28.compute-1.amazonaws.com:5432/d8pmmsu047kmp9')
 
 const models = {
   users: connection.import('./users'),
