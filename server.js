@@ -4,7 +4,7 @@ const pg = require('pg');
 const db = require('./db/connection');
 
 
-const port = 4000;
+const port = process.env.PORT;
 const app = express();
 
 app.use(bodyParser.json());
