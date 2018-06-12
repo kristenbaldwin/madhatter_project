@@ -13,5 +13,6 @@ module.exports = function (app, db) {
             linkedin: req.body.linkedin,
             opp_id: req.body.opp_id,
         })
+        res.json({status: 'OK'});
     })
 }

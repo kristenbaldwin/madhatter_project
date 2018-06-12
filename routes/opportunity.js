@@ -27,6 +27,7 @@ module.exports = function (app, db) {
                 opp_id: opportunity.id,
             }), res.json(opportunity.id)
         })
+        res.json({status: 'OK'});
     })
 
 

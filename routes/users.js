@@ -7,5 +7,6 @@ module.exports = function (app, db) {
             email: 'test-email',
             role: 'test-role',
         })
+        res.json({status: 'OK'});
     })
 }
