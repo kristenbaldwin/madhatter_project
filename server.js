@@ -5,6 +5,7 @@ const db = require('./db/connection');
 
 
 const port = process.env.PORT;
+// const port = 4000;
 const app = express();
 
 app.use(bodyParser.json());
