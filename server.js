@@ -24,7 +24,7 @@ require('./routes')(app, db);
 
 // Catch all for frontend
 app.get('*', function (req, resp) {
-  resp.sendFile('build/index.html');
+  resp.sendFile(__dirname + '/build/index.html');
 });
 
 app.listen(port, () => {
