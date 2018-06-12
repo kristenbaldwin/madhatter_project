@@ -7,3 +7,4 @@
 # from heroku documentation
 npm-debug.log
 /*.env
+build/
